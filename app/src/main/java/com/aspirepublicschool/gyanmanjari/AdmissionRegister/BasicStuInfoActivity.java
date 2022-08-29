@@ -26,7 +26,7 @@ public class BasicStuInfoActivity extends AppCompatActivity {
     String surname, name, fatherName, mobileNo, alternateMN;
     String gender;
 
-
+// tanishq chutiya
 //    @Override
 //    protected void onCreate(Bundle savedInstanceState) {
 //        super.onCreate(savedInstanceState);
@@ -100,9 +100,7 @@ public class BasicStuInfoActivity extends AppCompatActivity {
 
     private void setStudentInfo() {
 
-        int ID = radioGroup.getCheckedRadioButtonId();
-        radioButton = findViewById(ID);
-        gender = radioButton.getText().toString();
+
 
         if (edSurName.getText().toString().isEmpty() ||
                 edName.getText().toString().isEmpty() ||
@@ -111,11 +109,17 @@ public class BasicStuInfoActivity extends AppCompatActivity {
 
             Toast.makeText(this, "Please fill up every detail", Toast.LENGTH_SHORT).show();
 
-        }else if (gender.isEmpty()){
+        }
+//        else if (gender.isEmpty()){
+//
+//            Toast.makeText(this, "Please select gender", Toast.LENGTH_SHORT).show();
+//
+//        }
+        else{
 
-            Toast.makeText(this, "Please select gender", Toast.LENGTH_SHORT).show();
-
-        }else{
+            int ID = radioGroup.getCheckedRadioButtonId();
+            radioButton = findViewById(ID);
+            gender = radioButton.getText().toString();
 
             surname = edSurName.getText().toString();
             name = edName.getText().toString();
