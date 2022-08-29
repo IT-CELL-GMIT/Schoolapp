@@ -33,7 +33,7 @@ public class StuEduDetailActivity extends AppCompatActivity {
 
     EditText edSchoolName, edMathsMarks, edScienceMarks;
 
-    TextView btnNext;
+    TextView btnNext,totalOfMarks;
 
 //    @Override
 //    protected void onCreate(Bundle savedInstanceState) {
@@ -64,6 +64,7 @@ public class StuEduDetailActivity extends AppCompatActivity {
         radioGroup2 = findViewById(R.id.rgGroup);
 
         btnNext = findViewById(R.id.btnEduSave);
+        totalOfMarks  = findViewById(R.id.totalOfMarks);
 
         SharedPreferences sp = getSharedPreferences("FILE_NAME", MODE_PRIVATE);
 
@@ -101,6 +102,13 @@ public class StuEduDetailActivity extends AppCompatActivity {
             startActivity(new Intent(StuEduDetailActivity.this, AddressDetailStuActivity.class));
             finish();
         }
+
+        totalOfMarks.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                totalOfMarks.setText(totalMarks);
+            }
+        });
 
     }
 
