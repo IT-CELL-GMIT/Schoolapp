@@ -3,6 +3,31 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/himan/AndroidStudioProjects/Schoolapp/app/src/main/res/layout/activity_otplogin.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/himan/AndroidStudioProjects/Schoolapp/app/src/main/res/layout/activity_otpregister_verification.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/himan/AndroidStudioProjects/Schoolapp/app/src/main/res/layout/activity_payments_detail.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/himan/AndroidStudioProjects/Schoolapp/app/src/main/res/layout/activity_physics.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/himan/AndroidStudioProjects/Schoolapp/app/src/main/res/layout/activity_pref_faculty.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/himan/AndroidStudioProjects/Schoolapp/app/src/main/res/layout/activity_product_details.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/himan/AndroidStudioProjects/Schoolapp/app/src/main/res/layout/activity_profile.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/himan/AndroidStudioProjects/Schoolapp/app/src/main/res/layout/activity_profile_main.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/himan/AndroidStudioProjects/Schoolapp/app/src/main/res/layout/activity_profile_main2.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/himan/AndroidStudioProjects/Schoolapp/app/src/main/res/layout/activity_register.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/himan/AndroidStudioProjects/Schoolapp/app/src/main/res/layout/activity_result_profile.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/himan/AndroidStudioProjects/Schoolapp/app/src/main/res/layout/activity_select_shop_types.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/himan/AndroidStudioProjects/Schoolapp/app/src/main/res/layout/activity_shop_details.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/himan/AndroidStudioProjects/Schoolapp/app/src/main/res/layout/activity_shop_list.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/himan/AndroidStudioProjects/Schoolapp/app/src/main/res/layout/activity_simple_dashboard.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/himan/AndroidStudioProjects/Schoolapp/app/src/main/res/layout/activity_staff_details.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/himan/AndroidStudioProjects/Schoolapp/app/src/main/res/layout/activity_stationery_order.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/himan/AndroidStudioProjects/Schoolapp/app/src/main/res/layout/activity_stu_document.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/himan/AndroidStudioProjects/Schoolapp/app/src/main/res/layout/activity_student_login.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/himan/AndroidStudioProjects/Schoolapp/app/src/main/res/layout/activity_student_profile.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/himan/AndroidStudioProjects/Schoolapp/app/src/main/res/layout/activity_subject_doubt.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/himan/AndroidStudioProjects/Schoolapp/app/src/main/res/layout/activity_submit_test_pdf.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/himan/AndroidStudioProjects/Schoolapp/app/src/main/res/layout/activity_test_material.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/himan/AndroidStudioProjects/Schoolapp/app/src/main/res/layout/activity_tuition_detail.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/himan/AndroidStudioProjects/Schoolapp/app/src/main/res/layout/activity_tution_details.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/pc/Desktop/schoolApp-master/app/src/main/res/drawable/background_toolbar_translucent.xml" value="0.1565" />
         <entry key="..\:/Users/pc/Desktop/schoolApp-master/app/src/main/res/drawable/backgroundbutton.xml" value="0.1565" />
         <entry key="..\:/Users/pc/Desktop/schoolApp-master/app/src/main/res/drawable/bookmark.xml" value="0.1565" />
