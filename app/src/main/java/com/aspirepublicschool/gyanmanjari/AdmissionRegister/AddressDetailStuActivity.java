@@ -260,6 +260,11 @@ public class AddressDetailStuActivity extends AppCompatActivity {
 
         uploadData();
 
+
+        //hdsiufherifjnerijfnerijofvn
+        //smaewlvkjnercljnecvjonecl
+        //dkmewfkiewdfoiewjmmfoiewmfci
+
     }
 
 }
