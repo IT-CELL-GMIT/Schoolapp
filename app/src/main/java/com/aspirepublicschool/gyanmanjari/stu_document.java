@@ -85,7 +85,7 @@ public class stu_document extends AppCompatActivity {
 
                         startActivityForResult(Intent.createChooser(intent,"select image"),1);
 
-                        button.setBackgroundColor(button.getContext().getResources().getColor(R.color.black));
+                        button.setBackgroundColor(button.getContext().getResources().getColor(android.R.color.holo_green_dark));
                     }
 
                     @Override
@@ -113,7 +113,7 @@ public class stu_document extends AppCompatActivity {
                         intent.setType("application/pdf");
                         intent.setAction(Intent.ACTION_GET_CONTENT);
 
-                        button1.setBackgroundColor(button1.getContext().getResources().getColor(R.color.black));
+                        button1.setBackgroundColor(button1.getContext().getResources().getColor(android.R.color.holo_green_dark));
                         startActivityForResult(Intent.createChooser(intent,"select image"),1);
 
                     }
@@ -142,7 +142,7 @@ public class stu_document extends AppCompatActivity {
                         Intent intent = new Intent();
                         intent.setType("application/pdf");
                         intent.setAction(Intent.ACTION_GET_CONTENT);
-                        button2.setBackgroundColor(button2.getContext().getResources().getColor(R.color.black));
+                        button2.setBackgroundColor(button2.getContext().getResources().getColor(android.R.color.holo_green_dark));
                         startActivityForResult(Intent.createChooser(intent,"select image"),1);
 
                     }
@@ -171,7 +171,7 @@ public class stu_document extends AppCompatActivity {
                         Intent intent = new Intent();
                         intent.setType("application/pdf");
                         intent.setAction(Intent.ACTION_GET_CONTENT);
-                        button3.setBackgroundColor(button3.getContext().getResources().getColor(R.color.black));
+                        button3.setBackgroundColor(button3.getContext().getResources().getColor(android.R.color.holo_green_dark));
                         startActivityForResult(Intent.createChooser(intent,"select image"),1);
 
                     }
@@ -200,7 +200,7 @@ public class stu_document extends AppCompatActivity {
                         Intent intent = new Intent();
                         intent.setType("application/pdf");
                         intent.setAction(Intent.ACTION_GET_CONTENT);
-                        button4.setBackgroundColor(button4.getContext().getResources().getColor(R.color.black));
+                        button4.setBackgroundColor(button4.getContext().getResources().getColor(android.R.color.holo_green_dark));
                         startActivityForResult(Intent.createChooser(intent,"select image"),1);
 
                     }
@@ -229,7 +229,7 @@ public class stu_document extends AppCompatActivity {
                         Intent intent = new Intent();
                         intent.setType("application/pdf");
                         intent.setAction(Intent.ACTION_GET_CONTENT);
-                        button5.setBackgroundColor(button5.getContext().getResources().getColor(R.color.black));
+                        button5.setBackgroundColor(button5.getContext().getResources().getColor(android.R.color.holo_green_dark));
                         startActivityForResult(Intent.createChooser(intent,"select image"),1);
 
                     }
