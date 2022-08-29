@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "341045105208",
+    "project_id": "schoolapp-b5e5d",
+    "storage_bucket": "schoolapp-b5e5d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:341045105208:android:0a5fbad0bdee5394738ccd",
+        "android_client_info": {
+          "package_name": "com.aspirepublicschool.gyanmanjari"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "341045105208-i3osfd0434kp3glop7j8p3d5b23rtvf1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCBThv2Cbll9FWYZjrCMIpa5FOVOZx0qMQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "341045105208-i3osfd0434kp3glop7j8p3d5b23rtvf1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
