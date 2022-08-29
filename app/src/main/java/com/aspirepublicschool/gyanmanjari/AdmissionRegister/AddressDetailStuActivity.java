@@ -22,6 +22,10 @@ import com.android.volley.toolbox.Volley;
 import com.aspirepublicschool.gyanmanjari.Admission.AttemptTestActivity;
 import com.aspirepublicschool.gyanmanjari.R;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -38,9 +42,9 @@ public class AddressDetailStuActivity extends AppCompatActivity {
     RadioButton radioButton1, radioButton2;
 
     String surname, name, fatherName, mobileNo, alternateMN;
-    String gender;
+    String gender,id;
 
-    String url = "https://biochemical-damping.000webhostapp.com/insert.php";
+    String url = "https://biochemical-damping.000webhostapp.com/insert.php", urlId = "https://biochemical-damping.000webhostapp.com/idfetch.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,11 +89,11 @@ public class AddressDetailStuActivity extends AppCompatActivity {
                 recidenceCity == String.valueOf(-1) ||
                 saRecidenceAddress == String.valueOf(-1) ||
                 saRecidenceVillageArea == String.valueOf(-1) ||
-                saRecidenceCity == String.valueOf(-1) ) {
+                saRecidenceCity == String.valueOf(-1)) {
 
             waitforResponse();
 
-        }else {
+        } else {
 
             if (surname == String.valueOf(-1) ||
                     name == String.valueOf(-1) ||
@@ -101,16 +105,16 @@ public class AddressDetailStuActivity extends AppCompatActivity {
                     recidenceCity == String.valueOf(-1) ||
                     saRecidenceAddress == String.valueOf(-1) ||
                     saRecidenceVillageArea == String.valueOf(-1) ||
-                    saRecidenceCity == String.valueOf(-1)){
+                    saRecidenceCity == String.valueOf(-1)) {
 
                 startActivity(new Intent(AddressDetailStuActivity.this, BasicStuInfoActivity.class));
                 finish();
                 Toast.makeText(this, "something went wrong try to refill every detail", Toast.LENGTH_SHORT).show();
 
-            }else {
+            } else {
 
-                startActivity(new Intent(AddressDetailStuActivity.this, AttemptTestActivity.class));
-                finish();
+//                startActivity(new Intent(AddressDetailStuActivity.this, AttemptTestActivity.class));
+//                finish();
 
             }
 
@@ -120,6 +124,7 @@ public class AddressDetailStuActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 getData();
+
             }
         });
 
@@ -131,9 +136,7 @@ public class AddressDetailStuActivity extends AppCompatActivity {
             @Override
             public void onResponse(String response) {
 
-                startActivity(new Intent(AddressDetailStuActivity.this, AttemptTestActivity.class));
-                Toast.makeText(AddressDetailStuActivity.this, "data inserted successfully", Toast.LENGTH_SHORT).show();
-               // finish();
+                fetchId();
 
             }
         }, new Response.ErrorListener() {
@@ -143,7 +146,7 @@ public class AddressDetailStuActivity extends AppCompatActivity {
                 Toast.makeText(AddressDetailStuActivity.this, "something went wrong\n" + error.getMessage(), Toast.LENGTH_SHORT).show();
 
             }
-        }){
+        }) {
 
             @Nullable
             @Override
@@ -172,7 +175,7 @@ public class AddressDetailStuActivity extends AppCompatActivity {
                 params.put("saRecidenceVillageArea", saRecidenceVillageArea);
                 params.put("saRecidenceCity", saRecidenceCity);
 
-                return  params;
+                return params;
 
             }
         };
@@ -207,11 +210,11 @@ public class AddressDetailStuActivity extends AppCompatActivity {
                 name == String.valueOf(-1) ||
                 fatherName == String.valueOf(-1) ||
                 mobileNo == String.valueOf(-1) ||
-                gender == String.valueOf(-1)){
+                gender == String.valueOf(-1)) {
 
             Toast.makeText(this, "Please fill up previous detail", Toast.LENGTH_SHORT).show();
 
-        }else {
+        } else {
 
             readyData();
 
@@ -234,11 +237,11 @@ public class AddressDetailStuActivity extends AppCompatActivity {
                 recidenceCity.isEmpty() ||
                 saRecidenceAddress.isEmpty() ||
                 saRecidenceVillageArea.isEmpty() ||
-                saRecidenceCity.isEmpty()){
+                saRecidenceCity.isEmpty()) {
 
             Toast.makeText(this, "Please every detail first", Toast.LENGTH_SHORT).show();
 
-        }else {
+        } else {
 
             setData();
 
@@ -262,4 +265,84 @@ public class AddressDetailStuActivity extends AppCompatActivity {
 
     }
 
+    private void fetchId() {
+
+        SharedPreferences sp = getSharedPreferences("FILE_NAME", MODE_PRIVATE);
+        SharedPreferences.Editor edit = sp.edit();
+
+        surname = sp.getString("surname", String.valueOf(-1));
+        name = sp.getString("name", String.valueOf(-1));
+        fatherName = sp.getString("fatherName", String.valueOf(-1));
+        mobileNo = sp.getString("mobileNo", String.valueOf(-1));
+
+
+
+        StringRequest request = new StringRequest(Request.Method.POST, urlId, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+
+
+
+                try {
+
+                    JSONObject jsonObject = new JSONObject(response);
+                    String success = jsonObject.getString("success");
+                    JSONArray jsonArray = jsonObject.getJSONArray("data");
+
+                    if (success.equals("1")) {
+
+                        SharedPreferences sp = getSharedPreferences("FILE_NAME", MODE_PRIVATE);
+                        SharedPreferences.Editor edit = sp.edit();
+
+                        JSONObject object = jsonArray.getJSONObject(0);
+
+                        id = object.getString("id");
+                        edit.putString("mainID", id);
+
+                        startActivity(new Intent(AddressDetailStuActivity.this, AttemptTestActivity.class));
+                        Toast.makeText(AddressDetailStuActivity.this, "data inserted successfully", Toast.LENGTH_SHORT).show();
+                        finish();
+
+
+                    }
+
+
+                } catch (JSONException e) {
+
+                    Toast.makeText(AddressDetailStuActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+
+                }
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+                Toast.makeText(AddressDetailStuActivity.this, "something went wrong\n" + error.getMessage(), Toast.LENGTH_SHORT).show();
+
+            }
+        }) {
+
+            @Nullable
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+
+                Map<String, String> params = new HashMap<String, String>();
+
+                params.put("surName", surname);
+                params.put("name", name);
+                params.put("fatherName", fatherName);
+                params.put("mobileNo", mobileNo);
+
+
+                return params;
+
+            }
+        };
+
+        RequestQueue requestQueue = Volley.newRequestQueue(AddressDetailStuActivity.this);
+        requestQueue.add(request);
+
+
+    }
 }
