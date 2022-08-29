@@ -52,6 +52,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.aspirepublicschool.gyanmanjari.AdmissionDetailRegister.update;
 import com.aspirepublicschool.gyanmanjari.Doubt.DoubtSubject;
 import com.aspirepublicschool.gyanmanjari.DoubtSolving.ChatDoubt;
 import com.aspirepublicschool.gyanmanjari.DoubtSolving.Utils;
@@ -217,7 +218,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         //String image_url=preferences.getString("st_dp","null");
         Log.d("nnnn", image_url);
 
-            getStatus();
+        getStatus();
 
 
 //        Toast.makeText(getApplicationContext(), status, Toast.LENGTH_SHORT).show();
@@ -796,6 +797,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 editor.remove("mobile");
                 editor.putInt("login",1);
                 editor.commit();*/
+
+
+            case R.id.update1:
+                startActivity(new Intent(MainActivity.this, update.class));
 
                 // do something
                 return true;

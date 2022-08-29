@@ -265,6 +265,7 @@ public class AddressDetailStuActivity extends AppCompatActivity {
         //smaewlvkjnercljnecvjonecl
         //dkmewfkiewdfoiewjmmfoiewmfci
         //SUFHERGFUNERQUOFNQERIUOFNJQEROIUFJ
+        //kuch to change mangta
 
     }
 
