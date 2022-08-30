@@ -22,6 +22,7 @@ import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.TextView;
@@ -31,8 +32,18 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.aspirepublicschool.gyanmanjari.MainActivity;
 import com.aspirepublicschool.gyanmanjari.R;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class AddDetail extends Fragment {
 
@@ -50,7 +61,7 @@ public class AddDetail extends Fragment {
 
     String surname, name, fatherName, mobileNo, alternateMN;
     String gender,id;
-
+//    Button update;
     RadioButton radioButton;
 
     ProgressDialog progressDialog;
@@ -77,6 +88,7 @@ public class AddDetail extends Fragment {
         saRecidenceAddress = sp.getString("saRecidenceAddress", String.valueOf(-1));
         saRecidenceVillageArea = sp.getString("saRecidenceVillageArea", String.valueOf(-1));
         saRecidenceCity = sp.getString("saRecidenceCity", String.valueOf(-1));
+        id = sp.getString("mainID", String.valueOf(-1));
 
 
         setData();
@@ -131,6 +143,70 @@ public class AddDetail extends Fragment {
         scienceMarks = edScienceMarks.getText().toString();
         totalMarks = String.valueOf(Integer.parseInt(mathsMarks) + Integer.parseInt(scienceMarks));
 
+        SharedPreferences sp = this.getActivity().getSharedPreferences("FILE_NAME", MODE_PRIVATE);
+        final String gender = sp.getString("gender", String.valueOf(-1));
+        Medium = sp.getString("Medium", String.valueOf(-1));
+        Group = sp.getString("Group", String.valueOf(-1));
+
+//        Toast.makeText(view.getContext(), name, Toast.LENGTH_SHORT).show();
+
+        progressDialog.setMessage("Updating...");
+        progressDialog.show();
+        StringRequest request = new StringRequest(Request.Method.POST, "https://biochemical-damping.000webhostapp.com/update.php",
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        Toast.makeText(getContext(), response, Toast.LENGTH_SHORT).show();
+                        progressDialog.dismiss();
+                        startActivity(new Intent(view.getContext(),MainActivity.class));
+                        getActivity().finish();
+
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+//
+                        Toast.makeText(getContext(), error.getMessage(), Toast.LENGTH_SHORT).show();
+
+                        progressDialog.dismiss();
+                    }
+                }
+        ){
+            @Nullable
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> Params = new HashMap<String, String>();
+                Params.put("mainID",id);
+                Params.put("surName",surname);
+                Params.put("name", name);
+                Params.put("fatherName", fatherName);
+                Params.put("mobileNo", mobileNo);
+                Params.put("alternateMN", alternateMN);
+                Params.put("genderTaken", gender);
+                Params.put("schoolName", schoolName);
+                Params.put("medium", Medium);
+                Params.put("groupTaken", Group);
+                Params.put("mathsMarks", mathsMarks);
+                Params.put("scienceMarks", scienceMarks);
+                Params.put("totalMarks", totalMarks);
+                Params.put("recidenceAddress", recidenceAddress);
+                Params.put("recidenceVillageArea", recidenceVillageArea);
+                Params.put("recidenceCity", recidenceCity);
+                Params.put("saRecidenceAddress", saRecidenceAddress);
+                Params.put("saRecidenceVillageArea", saRecidenceVillageArea);
+                Params.put("saRecidenceCity", saRecidenceCity);
+
+                return Params;
+            }
+
+        };
+        RequestQueue requestQueue = Volley.newRequestQueue(getActivity().getApplicationContext());
+        requestQueue.add(request);
+
+
+
+
 //        int ID = radioGroup.getCheckedRadioButtonId();
 //        radioButton = view.findViewById(ID);
 //        gender = radioButton.getText().toString();
@@ -142,6 +218,10 @@ public class AddDetail extends Fragment {
 //        int ID2 = radioGroup2.getCheckedRadioButtonId();
 //        radioButton2 = view.findViewById(ID2);
 //        Group = radioButton2.getText().toString();
+
+
+
+
 
         new Handler().postDelayed(new Runnable() {
             @Override
