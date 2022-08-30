@@ -39,18 +39,25 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-
         <activity
-            android:name=".stu_document"
-            android:exported="true">
+            android:name=".DocumentUpload.DocumentUploadActivity"
+            android:exported="true" >
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
 
+        <activity
+            android:name=".AdmissionDetailRegister.update"
+            android:exported="true" >
+
+
+
+        </activity>
         <activity
             android:name=".AdmissionRegister.StuEduDetailActivity"
             android:exported="false" />
@@ -59,9 +66,11 @@
             android:exported="false" />
         <activity
             android:name=".AdmissionRegister.BasicStuInfoActivity"
-            android:exported="true" >
+            android:exported="true">
 
-            </activity>
+
+
+        </activity>
         <activity
             android:name=".Admission.NewAdmissionLoginActivity"
             android:exported="true">
@@ -99,7 +108,6 @@
         <activity
             android:name=".SimpleDashboardActivity"
             android:exported="false" />
-
         <activity
             android:name=".NewRegister.NewTutionDetailsActivity"
             android:exported="false" />
@@ -179,12 +187,11 @@
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:theme="@style/AppTheme.NoActionBar" >
+            android:theme="@style/AppTheme.NoActionBar">
 
-<!--           apani main screen-->
+            <!-- apani main screen -->
 
         </activity>
-
         <activity
             android:name=".NewRegister.PrefFacultyActivity"
             android:exported="false" />

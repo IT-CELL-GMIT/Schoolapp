@@ -44,7 +44,5 @@ public class PayTMActivity extends AppCompatActivity {
         webview.getSettings().setJavaScriptEnabled(true);
         webview.setWebViewClient(new WebViewClient());
 
-
-
     }
 }

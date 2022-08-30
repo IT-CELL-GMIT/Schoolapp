@@ -2,7 +2,9 @@ package com.aspirepublicschool.gyanmanjari.AdmissionRegister;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.swiperefreshlayout.widget.CircularProgressDrawable;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -46,10 +48,14 @@ public class AddressDetailStuActivity extends AppCompatActivity {
 
     String url = "https://biochemical-damping.000webhostapp.com/insert.php", urlId = "https://biochemical-damping.000webhostapp.com/idfetch.php";
 
+    ProgressDialog progressDialog;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_address_detail_stu);
+
+        progressDialog = new ProgressDialog(this);
 
         edRecidenceAddress = findViewById(R.id.recidenceAddress);
         edRecidenceVillageArea = findViewById(R.id.recidenceVillageArea);
@@ -113,8 +119,8 @@ public class AddressDetailStuActivity extends AppCompatActivity {
 
             } else {
 
-//                startActivity(new Intent(AddressDetailStuActivity.this, AttemptTestActivity.class));
-//                finish();
+                startActivity(new Intent(AddressDetailStuActivity.this, AttemptTestActivity.class));
+                finish();
 
             }
 
@@ -136,6 +142,10 @@ public class AddressDetailStuActivity extends AppCompatActivity {
             @Override
             public void onResponse(String response) {
 
+                progressDialog.dismiss();
+
+                progressDialog.setMessage("Just a little moment...");
+                progressDialog.show();
                 fetchId();
 
             }
@@ -143,6 +153,7 @@ public class AddressDetailStuActivity extends AppCompatActivity {
             @Override
             public void onErrorResponse(VolleyError error) {
 
+                progressDialog.dismiss();
                 Toast.makeText(AddressDetailStuActivity.this, "something went wrong\n" + error.getMessage(), Toast.LENGTH_SHORT).show();
 
             }
@@ -198,6 +209,9 @@ public class AddressDetailStuActivity extends AppCompatActivity {
 
     private void getData() {
 
+        progressDialog.setMessage("Please Wait...");
+        progressDialog.show();
+
         SharedPreferences sp = getSharedPreferences("FILE_NAME", MODE_PRIVATE);
 
         String surname = sp.getString("surname", String.valueOf(-1));
@@ -213,6 +227,7 @@ public class AddressDetailStuActivity extends AppCompatActivity {
                 gender == String.valueOf(-1)) {
 
             Toast.makeText(this, "Please fill up previous detail", Toast.LENGTH_SHORT).show();
+            progressDialog.dismiss();
 
         } else {
 
@@ -239,6 +254,7 @@ public class AddressDetailStuActivity extends AppCompatActivity {
                 saRecidenceVillageArea.isEmpty() ||
                 saRecidenceCity.isEmpty()) {
 
+            progressDialog.dismiss();
             Toast.makeText(this, "Please every detail first", Toast.LENGTH_SHORT).show();
 
         } else {
@@ -285,6 +301,7 @@ public class AddressDetailStuActivity extends AppCompatActivity {
 
                 try {
 
+                    progressDialog.dismiss();
                     JSONObject jsonObject = new JSONObject(response);
                     String success = jsonObject.getString("success");
                     JSONArray jsonArray = jsonObject.getJSONArray("data");
@@ -298,6 +315,7 @@ public class AddressDetailStuActivity extends AppCompatActivity {
 
                         id = object.getString("id");
                         edit.putString("mainID", id);
+                        edit.apply();
 
                         startActivity(new Intent(AddressDetailStuActivity.this, AttemptTestActivity.class));
                         Toast.makeText(AddressDetailStuActivity.this, "data inserted successfully", Toast.LENGTH_SHORT).show();
@@ -309,6 +327,7 @@ public class AddressDetailStuActivity extends AppCompatActivity {
 
                 } catch (JSONException e) {
 
+                    progressDialog.dismiss();
                     Toast.makeText(AddressDetailStuActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
 
                 }
@@ -342,9 +361,6 @@ public class AddressDetailStuActivity extends AppCompatActivity {
 
         RequestQueue requestQueue = Volley.newRequestQueue(AddressDetailStuActivity.this);
         requestQueue.add(request);
-
-        //gyhtchgchgc
-
 
     }
 }

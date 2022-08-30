@@ -156,6 +156,8 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:enabled="true"
+
                         android:text="Male"
                         tools:ignore="TouchTargetSizeCheck" />
 
@@ -172,7 +174,6 @@
 
 
             <TextView
-                android:id="@+id/btnbasicSave"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -184,7 +185,7 @@
                 android:paddingTop="12dp"
                 android:paddingRight="12dp"
                 android:paddingBottom="12dp"
-                android:text="Next page"
+                android:text="SLIDE-->"
                 android:textColor="@color/icons"
                 android:textSize="20sp" />
 

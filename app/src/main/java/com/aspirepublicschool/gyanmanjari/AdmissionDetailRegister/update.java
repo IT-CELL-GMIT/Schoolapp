@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -37,6 +39,7 @@ public class update extends AppCompatActivity implements TabLayout.OnTabSelected
         tabLayout.addTab(tabLayout.newTab().setText("addDetail"));
 //     tabLayout.addTab(tabLayout.newTab().setText("logout"));
         tabLayout.setTabGravity(TabLayout.GRAVITY_CENTER);
+        tabLayout.setVisibility(View.INVISIBLE);
         viewPager = findViewById(R.id.pager);
         pageAdapter adapter = new pageAdapter(getSupportFragmentManager(), tabLayout.getTabCount());
         viewPager.setAdapter(adapter);
@@ -88,4 +91,5 @@ public class update extends AppCompatActivity implements TabLayout.OnTabSelected
     public void onTabReselected(TabLayout.Tab tab) {
 
     }
+
 }

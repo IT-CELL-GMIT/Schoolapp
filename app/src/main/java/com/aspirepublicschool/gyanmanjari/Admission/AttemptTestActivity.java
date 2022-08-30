@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.aspirepublicschool.gyanmanjari.DocumentUpload.DocumentUploadActivity;
 import com.aspirepublicschool.gyanmanjari.R;
 import com.aspirepublicschool.gyanmanjari.Test.ViewTestToday;
 
@@ -21,7 +22,7 @@ public class AttemptTestActivity extends AppCompatActivity {
         setContentView(R.layout.activity_attempt_test);
         getSupportActionBar().hide();
 
-        //btnAttemptTest = findViewById(R.id.btnAttemptTest);
+        btnAttemptTest = findViewById(R.id.btnAttemptTest);
 
 //        btnAttemptTest.setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -29,6 +30,13 @@ public class AttemptTestActivity extends AppCompatActivity {
 //                startActivity(new Intent(AttemptTestActivity.this, ViewTestToday.class));
 //            }
 //        });
+
+        btnAttemptTest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(AttemptTestActivity.this, DocumentUploadActivity.class));
+            }
+        });
 
 
     }
