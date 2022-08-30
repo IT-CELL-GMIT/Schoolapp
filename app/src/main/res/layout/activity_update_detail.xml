@@ -22,12 +22,11 @@
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/etablayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_below="@+id/etoolbar"
         android:background="#ED0505"
         app:tabMode="scrollable"
-        app:tabTextColor="#FFFFFF"
-        ></com.google.android.material.tabs.TabLayout>
+        app:tabTextColor="#FFFFFF"></com.google.android.material.tabs.TabLayout>
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/pager"
