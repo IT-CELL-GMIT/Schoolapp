@@ -44,7 +44,7 @@ import java.util.Map;
 public class DocumentUploadActivity extends AppCompatActivity {
     Button button,button1,button2,button3,button4,button5,button6;
     Bitmap bitmap;
-    String encodedImage,Document="doc",Document1="doc",Document2="doc",Document3="doc",Document4="doc",Document5="doc";
+    String encodedImage,Document="doc",Document1="doc1",Document2="doc2",Document3="doc3",Document4="doc4",Document5="doc5";
     String Doc,Doc1,Doc2,Doc3,Doc4,Doc5;
     byte[] bytes;
     String uriString, position;
@@ -86,12 +86,12 @@ public class DocumentUploadActivity extends AppCompatActivity {
 //            finish();
 //
 //        }
-        if (Doc == String.valueOf(-1) ||
-                Doc1 == String.valueOf(-1) ||
-                Doc2 == String.valueOf(-1) ||
-                Doc3 == String.valueOf(-1) ||
-                Doc4 == String.valueOf(-1) ||
-                Doc5 == String.valueOf(-1) ){
+        if (Doc != String.valueOf(-1) ||
+                Doc1 != String.valueOf(-1) ||
+                Doc2 != String.valueOf(-1) ||
+                Doc3 != String.valueOf(-1) ||
+                Doc4 != String.valueOf(-1) ||
+                Doc5 != String.valueOf(-1) ){
 
             startActivity(new Intent(this, update.class));
             finish();
@@ -279,8 +279,6 @@ public class DocumentUploadActivity extends AppCompatActivity {
 
 
 
-                try {
-
 //                    Document = DocumentList.get(0);
 //                    Document1 = DocumentList.get(1);
 //                    Document2 = DocumentList.get(2);
@@ -294,7 +292,6 @@ public class DocumentUploadActivity extends AppCompatActivity {
                         Toast.makeText(DocumentUploadActivity.this, "Please Select Your Marksheet", Toast.LENGTH_SHORT).show();
                     }
                     else if (Document1.equals("doc1")) {
-
                         Toast.makeText(DocumentUploadActivity.this, "Please Select Your Image", Toast.LENGTH_SHORT).show();
                     } else if (Document2.equals("doc2")) {
 
@@ -377,13 +374,6 @@ public class DocumentUploadActivity extends AppCompatActivity {
                         RequestQueue requestQueue = Volley.newRequestQueue(DocumentUploadActivity.this);
                         requestQueue.add(request);
                     }
-
-                }catch (ArrayIndexOutOfBoundsException e){
-
-                    Toast.makeText(DocumentUploadActivity.this, "Enter Every Document", Toast.LENGTH_SHORT).show();
-
-
-                }
 
 
             }
