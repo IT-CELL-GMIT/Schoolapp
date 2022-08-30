@@ -2,6 +2,7 @@ package com.aspirepublicschool.gyanmanjari.Admission;
 
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -16,6 +17,7 @@ import com.aspirepublicschool.gyanmanjari.Test.ViewTestToday;
 public class AttemptTestActivity extends AppCompatActivity {
 
     TextView btnAttemptTest;
+    String testStatus;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,10 +33,26 @@ public class AttemptTestActivity extends AppCompatActivity {
 //            }
 //        });
 
+        SharedPreferences sp = getSharedPreferences("FILE_NAME", MODE_PRIVATE);
+        testStatus = sp.getString("Test", null);
+
+        if (testStatus!=null){
+            startActivity(new Intent(AttemptTestActivity.this, DocumentUploadActivity.class));
+            finish();
+        }
+
         btnAttemptTest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                SharedPreferences sp = getSharedPreferences("FILE_NAME", MODE_PRIVATE);
+                SharedPreferences.Editor edit = sp.edit();
+
+                edit.putString("Test","Test Attempt");
+                edit.apply();
+
                 startActivity(new Intent(AttemptTestActivity.this, DocumentUploadActivity.class));
+                finish();
             }
         });
 
