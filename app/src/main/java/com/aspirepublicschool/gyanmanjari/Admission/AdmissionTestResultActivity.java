@@ -32,3 +32,5 @@ public class AdmissionTestResultActivity extends AppCompatActivity {
         });
     }
 }
+
+//tanishq lodu
