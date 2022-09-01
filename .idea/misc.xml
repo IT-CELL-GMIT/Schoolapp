@@ -7,6 +7,7 @@
         <entry key="..\:/GMITProject/Schoolapp/app/src/main/res/drawable/edittext_shape.xml" value="0.214" />
         <entry key="..\:/GMITProject/Schoolapp/app/src/main/res/drawable/edittext_shape_blue.xml" value="0.1485" />
         <entry key="..\:/GMITProject/Schoolapp/app/src/main/res/layout/activity_address_detail_stu.xml" value="0.20677083333333332" />
+        <entry key="..\:/GMITProject/Schoolapp/app/src/main/res/layout/activity_admission_test_result.xml" value="0.20677083333333332" />
         <entry key="..\:/GMITProject/Schoolapp/app/src/main/res/layout/activity_attempt_test.xml" value="0.20677083333333332" />
         <entry key="..\:/GMITProject/Schoolapp/app/src/main/res/layout/activity_basic_stu_info.xml" value="0.20677083333333332" />
         <entry key="..\:/GMITProject/Schoolapp/app/src/main/res/layout/activity_document_upload.xml" value="0.19270833333333334" />
@@ -14,6 +15,7 @@
         <entry key="..\:/GMITProject/Schoolapp/app/src/main/res/layout/activity_jee.xml" value="0.20677083333333332" />
         <entry key="..\:/GMITProject/Schoolapp/app/src/main/res/layout/activity_jee_test.xml" value="0.20677083333333332" />
         <entry key="..\:/GMITProject/Schoolapp/app/src/main/res/layout/activity_maths.xml" value="0.20677083333333332" />
+        <entry key="..\:/GMITProject/Schoolapp/app/src/main/res/layout/activity_new_admission_login.xml" value="0.20677083333333332" />
         <entry key="..\:/GMITProject/Schoolapp/app/src/main/res/layout/activity_pay_tmactivity.xml" value="0.20677083333333332" />
         <entry key="..\:/GMITProject/Schoolapp/app/src/main/res/layout/activity_payment.xml" value="0.20677083333333332" />
         <entry key="..\:/GMITProject/Schoolapp/app/src/main/res/layout/activity_payments_detail.xml" value="0.20677083333333332" />
@@ -65,17 +67,12 @@
         <entry key="..\:/Users/pc/Desktop/schoolApp-master/app/src/main/res/layout/activity_splash_screen.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/pc/Desktop/schoolApp-master/app/src/main/res/layout/activity_student_profile.xml" value="0.5" />
         <entry key="..\:/Users/pc/Desktop/schoolApp-master/app/src/main/res/layout/activity_student_reg_otp.xml" value="0.25" />
-        <entry key="..\:/Users/pc/Desktop/schoolapp/app/src/main/res/drawable/button.xml" value="0.194" />
-        <entry key="..\:/Users/pc/Desktop/schoolapp/app/src/main/res/layout/activity_attempt_test.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/pc/Desktop/schoolapp/app/src/main/res/layout/activity_update_detail.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/pc/Desktop/schoolapp/app/src/main/res/layout/add_detail.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/pc/Desktop/schoolapp/app/src/main/res/layout/basic_activity.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/pc/Desktop/schoolapp/app/src/main/res/layout/edudetail.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/pc/Desktop/schoolapp/app/src/main/res/layout/notification_layout.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/pc/Desktop/schoolapp/app/src/main/res/menu/main.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/pc/Desktop/schoolapp/app/src/main/res/menu/main_menu.xml" value="0.20416666666666666" />
-        <entry key="..\:/schoolapp/app/src/main/res/layout/activity_attempt_test.xml" value="0.25" />
-        <entry key="..\:/schoolapp/app/src/main/res/layout/activity_document_upload.xml" value="0.1796875" />
       </map>
     </option>
   </component>

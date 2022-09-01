@@ -52,7 +52,7 @@ public class AttemptTestActivity extends AppCompatActivity {
                 edit.putString("Test","Test Attempt");
                 edit.apply();
 
-                startActivity(new Intent(AttemptTestActivity.this, DocumentUploadActivity.class));
+                startActivity(new Intent(AttemptTestActivity.this, PaymentActivity.class));
                 finish();
             }
         });

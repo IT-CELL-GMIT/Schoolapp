@@ -50,7 +50,7 @@ public class PaymentActivity extends AppCompatActivity implements PaymentResultW
         SharedPreferences sp = getSharedPreferences("FILE_NAME", MODE_PRIVATE);
         String paymentStatus = sp.getString("PaymentStatus", null);
 
-        if (paymentStatus.equals("PaymentDone")){
+        if (paymentStatus == "PaymentDone"){
 
             startActivity(new Intent(getApplicationContext(), DocumentUploadActivity.class));
             finish();
@@ -86,7 +86,7 @@ public class PaymentActivity extends AppCompatActivity implements PaymentResultW
             options.put("send_sms_hash",true);
             options.put("allow_rotation", true);
             //You can omit the image option to fetch the image from dashboard
-            options.put("image", "https://s3.amazonaws.com/rzp-mobile/images/rzp.png");
+            options.put("image", "https://biochemical-damping.000webhostapp.com/GM%20Logo/gm.jpg");
             options.put("currency", "INR");
             options.put("amount", "100");
 
