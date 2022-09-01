@@ -76,6 +76,5 @@ public class basic_activity extends Fragment {
 
     }
 
-
 }
 

@@ -239,7 +239,7 @@ public class DocumentUploadActivity extends AppCompatActivity {
             }
         });
 
-        button5.setOnClickListener(new View.OnClickListener() {
+        button5.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Dexter.withActivity(DocumentUploadActivity.this).withPermission(Manifest.permission.READ_EXTERNAL_STORAGE).withListener(new PermissionListener() {
