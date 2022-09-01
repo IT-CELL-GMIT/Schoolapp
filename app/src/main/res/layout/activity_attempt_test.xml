@@ -8,93 +8,92 @@
     <ImageView
         android:id="@+id/imageView4"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="156dp"
+        android:layout_height="200dp"
         android:src="@drawable/registersuccessimg"
-        app:layout_constraintBottom_toBottomOf="@+id/cardView"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="TODO">
 
     </ImageView>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardView"
+        android:id="@+id/cardView4"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="200dp"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="400dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        app:cardBackgroundColor="@color/colorPrimaryDark"
         app:cardCornerRadius="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/imageView4">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/colorAccent"
             android:orientation="vertical">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:id="@+id/textView12"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="8dp"
-                android:text="Notice"
-                android:textColor="@color/white"
+                android:layout_margin="10dp"
+                android:gravity="center"
+                android:text="Important Note"
+                android:textColor="#97FB03"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="12dp"
-                android:text="Attempt All The Questions."
-                android:textColor="@color/green"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="8dp"
-                android:text="MCQ based Test."
-                android:textColor="@color/green"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <TextView
+                android:id="@+id/textView13"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:text="Press Attempt Test Button to Give a Test."
-                android:textColor="@color/green"
-                android:textSize="18sp"
+                android:layout_margin="10dp"
+                android:text="Your Registtation has been completed !"
+                android:textColor="@color/white"
+                android:textSize="17sp"
                 android:textStyle="bold" />
 
-        </LinearLayout>
+            <TextView
+                android:id="@+id/textView16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="Admin will contact you as soon as possible !"
+                android:textColor="@color/white"
+                android:textSize="17sp"
+                android:textStyle="bold" />
 
+            <TextView
+                android:id="@+id/textView17"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="We will inform you for Admission Test."
+                android:textColor="@color/white"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+        </LinearLayout>
     </androidx.cardview.widget.CardView>
 
-        <TextView
-            android:id="@+id/btnAttemptTest"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:background="@drawable/button"
-            android:gravity="center"
-            android:padding="12dp"
-            android:text="Attempt Test"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cardView"
-            app:layout_constraintVertical_bias="0.283" />
+    <TextView
+        android:id="@+id/btnAttemptTest"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button"
+        android:gravity="center"
+        android:padding="12dp"
+        android:text="Attempt Test"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView4" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
