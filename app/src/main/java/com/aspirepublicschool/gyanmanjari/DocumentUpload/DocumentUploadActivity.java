@@ -26,6 +26,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.aspirepublicschool.gyanmanjari.AdmissionDetailRegister.update;
+import com.aspirepublicschool.gyanmanjari.MainActivity;
 import com.aspirepublicschool.gyanmanjari.R;
 import com.karumi.dexter.Dexter;
 import com.karumi.dexter.PermissionToken;
@@ -43,8 +44,7 @@ import java.util.Map;
 
 public class DocumentUploadActivity extends AppCompatActivity {
     Button button,button1,button2,button3,button4,button5,button6;
-    Bitmap bitmap;
-    String encodedImage,Document="doc",Document1="doc1",Document2="doc2",Document3="doc3",Document4="doc4",Document5="doc5";
+    String Document="doc",Document1="doc1",Document2="doc2",Document3="doc3",Document4="doc4",Document5="doc5";
     String Doc,Doc1,Doc2,Doc3,Doc4,Doc5;
     byte[] bytes;
     String uriString, position;
@@ -68,6 +68,8 @@ public class DocumentUploadActivity extends AppCompatActivity {
 
         SharedPreferences sp = getSharedPreferences("FILE_NAME", MODE_PRIVATE);
 
+        String updateStatus = sp.getString("updateStatus", null);
+
         Doc = sp.getString("doc", String.valueOf(-1));
         Doc1 = sp.getString("doc1", String.valueOf(-1));
         Doc2 = sp.getString("doc2", String.valueOf(-1));
@@ -75,18 +77,12 @@ public class DocumentUploadActivity extends AppCompatActivity {
         Doc4 = sp.getString("doc4", String.valueOf(-1));
         Doc5 = sp.getString("doc5", String.valueOf(-1));
 
-//        if (Doc == "uploaded" ||
-//                Doc1 == "uploaded" ||
-//                Doc2 == "uploaded" ||
-//                Doc3 == "uploaded" ||
-//                Doc4 == "uploaded" ||
-//                Doc5 == "uploaded" ){
-//
-//            startActivity(new Intent(this, update.class));
-//            finish();
-//
-//        }
-        if (Doc != String.valueOf(-1) ||
+
+        if (updateStatus != null){
+
+            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+
+        } else if (Doc != String.valueOf(-1) ||
                 Doc1 != String.valueOf(-1) ||
                 Doc2 != String.valueOf(-1) ||
                 Doc3 != String.valueOf(-1) ||
@@ -278,15 +274,6 @@ public class DocumentUploadActivity extends AppCompatActivity {
             public void onClick(View view) {
 
 
-
-//                    Document = DocumentList.get(0);
-//                    Document1 = DocumentList.get(1);
-//                    Document2 = DocumentList.get(2);
-//                    Document3 = DocumentList.get(3);
-//                    Document4 = DocumentList.get(4);
-//                    Document5 = DocumentList.get(5);
-
-
                     if (Document.equals("doc")) {
 
                         Toast.makeText(DocumentUploadActivity.this, "Please Select Your Marksheet", Toast.LENGTH_SHORT).show();
@@ -307,8 +294,6 @@ public class DocumentUploadActivity extends AppCompatActivity {
                         Toast.makeText(DocumentUploadActivity.this, "Please Select Your PWD Document", Toast.LENGTH_SHORT).show();
                     }
                     else {
-
-                        Toast.makeText(DocumentUploadActivity.this, Document1, Toast.LENGTH_SHORT).show();
 
                         progressDialog.setMessage("loading");
                         progressDialog.show();
@@ -410,23 +395,7 @@ public class DocumentUploadActivity extends AppCompatActivity {
             Log.d("data", "onActivityResult: Base64string="+Base64.encodeToString(bytes,Base64.DEFAULT));
             String ansValue = Base64.encodeToString(bytes,Base64.DEFAULT);
 
-//            Document=Base64.encodeToString(bytes,Base64.DEFAULT);
-//            Document1=Base64.encodeToString(bytes,Base64.DEFAULT);
-//            Document2=Base64.encodeToString(bytes,Base64.DEFAULT);
-//            Document3=Base64.encodeToString(bytes,Base64.DEFAULT);
-//            Document4=Base64.encodeToString(bytes,Base64.DEFAULT);
-//            Document5=Base64.encodeToString(bytes,Base64.DEFAULT);
 
-//            Toast.makeText(DocumentUploadActivity.this, Document, Toast.LENGTH_SHORT).show();
-//            Toast.makeText(this, position, Toast.LENGTH_SHORT).show();
-
-//            DocumentList.clear();
-//            DocumentList.add(Document);
-//            DocumentList.add(Document1);
-//            DocumentList.add(Document2);
-//            DocumentList.add(Document3);
-//            DocumentList.add(Document4);
-//            DocumentList.add(Document5);
 
             if (position.equals("0")){
                 Document=Base64.encodeToString(bytes,Base64.DEFAULT);

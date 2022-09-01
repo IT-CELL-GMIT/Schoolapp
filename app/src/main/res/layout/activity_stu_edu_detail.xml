@@ -191,9 +191,10 @@
                 android:drawableLeft="@drawable/outline_account_circle_black_24dp"
                 android:drawablePadding="8dp"
                 android:hint="Maths Marks Out Of 80"
-                android:inputType="textPersonName"
+                android:inputType="number"
                 android:padding="10dp"
                 android:textSize="16sp"
+                android:maxLength="2"
                 tools:ignore="TouchTargetSizeCheck" />
 
             <TextView
@@ -218,9 +219,10 @@
                 android:drawableLeft="@drawable/outline_account_circle_black_24dp"
                 android:drawablePadding="8dp"
                 android:hint="Science Marks Out Of 80"
-                android:inputType="textPersonName"
+                android:inputType="number"
                 android:padding="10dp"
                 android:textSize="16sp"
+                android:maxLength="2"
                 tools:ignore="TouchTargetSizeCheck" />
 
             <TextView
@@ -235,7 +237,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/totalOfMarks"
+                android:id="@+id/totalOfMarks_stu"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="12dp"
@@ -244,7 +246,7 @@
                 android:inputType="textPersonName"
                 android:padding="10dp"
                 android:textSize="16sp"
-                android:text="111"
+                android:text=""
                 android:textColor="@color/black"
                 tools:ignore="TouchTargetSizeCheck" />
 

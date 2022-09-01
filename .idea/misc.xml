@@ -3,14 +3,22 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/himan/AndroidStudioProjects/Schoolapp/app/src/main/res/drawable/edittext_shape_blue.xml" value="0.2265" />
-        <entry key="..\:/Users/himan/AndroidStudioProjects/Schoolapp/app/src/main/res/layout/activity_check_sum.xml" value="0.27447916666666666" />
-        <entry key="..\:/Users/himan/AndroidStudioProjects/Schoolapp/app/src/main/res/layout/activity_document_upload.xml" value="0.27447916666666666" />
-        <entry key="..\:/Users/himan/AndroidStudioProjects/Schoolapp/app/src/main/res/layout/activity_due_payment.xml" value="0.27447916666666666" />
-        <entry key="..\:/Users/himan/AndroidStudioProjects/Schoolapp/app/src/main/res/layout/activity_new_test_description.xml" value="0.27447916666666666" />
+        <entry key="..\:/GMITProject/Schoolapp/app/src/main/res/drawable/button.xml" value="0.1485" />
+        <entry key="..\:/GMITProject/Schoolapp/app/src/main/res/drawable/edittext_shape.xml" value="0.214" />
+        <entry key="..\:/GMITProject/Schoolapp/app/src/main/res/drawable/edittext_shape_blue.xml" value="0.1485" />
+        <entry key="..\:/GMITProject/Schoolapp/app/src/main/res/layout/activity_address_detail_stu.xml" value="0.20677083333333332" />
+        <entry key="..\:/GMITProject/Schoolapp/app/src/main/res/layout/activity_attempt_test.xml" value="0.20677083333333332" />
+        <entry key="..\:/GMITProject/Schoolapp/app/src/main/res/layout/activity_basic_stu_info.xml" value="0.20677083333333332" />
+        <entry key="..\:/GMITProject/Schoolapp/app/src/main/res/layout/activity_document_upload.xml" value="0.19270833333333334" />
+        <entry key="..\:/GMITProject/Schoolapp/app/src/main/res/layout/activity_stu_document.xml" value="0.20677083333333332" />
+        <entry key="..\:/GMITProject/Schoolapp/app/src/main/res/layout/activity_stu_edu_detail.xml" value="0.20677083333333332" />
+        <entry key="..\:/GMITProject/Schoolapp/app/src/main/res/layout/activity_test.xml" value="0.20677083333333332" />
+        <entry key="..\:/GMITProject/Schoolapp/app/src/main/res/layout/activity_update_detail.xml" value="0.20677083333333332" />
+        <entry key="..\:/GMITProject/Schoolapp/app/src/main/res/layout/add_detail.xml" value="0.20677083333333332" />
+        <entry key="..\:/GMITProject/Schoolapp/app/src/main/res/layout/basic_activity.xml" value="0.20677083333333332" />
+        <entry key="..\:/GMITProject/Schoolapp/app/src/main/res/layout/edudetail.xml" value="0.20677083333333332" />
         <entry key="..\:/Users/himan/AndroidStudioProjects/Schoolapp/app/src/main/res/layout/activity_otplogin.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/himan/AndroidStudioProjects/Schoolapp/app/src/main/res/layout/activity_otpregister_verification.xml" value="0.27447916666666666" />
-        <entry key="..\:/Users/himan/AndroidStudioProjects/Schoolapp/app/src/main/res/layout/activity_pay_tmactivity.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/himan/AndroidStudioProjects/Schoolapp/app/src/main/res/layout/activity_payments_detail.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/himan/AndroidStudioProjects/Schoolapp/app/src/main/res/layout/activity_physics.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/himan/AndroidStudioProjects/Schoolapp/app/src/main/res/layout/activity_pref_faculty.xml" value="0.27447916666666666" />
@@ -34,9 +42,6 @@
         <entry key="..\:/Users/himan/AndroidStudioProjects/Schoolapp/app/src/main/res/layout/activity_test_material.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/himan/AndroidStudioProjects/Schoolapp/app/src/main/res/layout/activity_tuition_detail.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/himan/AndroidStudioProjects/Schoolapp/app/src/main/res/layout/activity_tution_details.xml" value="0.27447916666666666" />
-        <entry key="..\:/Users/himan/AndroidStudioProjects/Schoolapp/app/src/main/res/layout/activity_update_detail.xml" value="0.27447916666666666" />
-        <entry key="..\:/Users/himan/AndroidStudioProjects/Schoolapp/app/src/main/res/layout/fragment_m_c_q_test.xml" value="0.27447916666666666" />
-        <entry key="..\:/Users/himan/AndroidStudioProjects/Schoolapp/app/src/main/res/menu/main_menu.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/pc/Desktop/schoolApp-master/app/src/main/res/drawable/background_toolbar_translucent.xml" value="0.1565" />
         <entry key="..\:/Users/pc/Desktop/schoolApp-master/app/src/main/res/drawable/backgroundbutton.xml" value="0.1565" />
         <entry key="..\:/Users/pc/Desktop/schoolApp-master/app/src/main/res/drawable/bookmark.xml" value="0.1565" />

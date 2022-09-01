@@ -1,6 +1,7 @@
 package com.aspirepublicschool.gyanmanjari.AdmissionDetailRegister;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -12,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager.widget.ViewPager;
 
+import com.aspirepublicschool.gyanmanjari.MainActivity;
 import com.aspirepublicschool.gyanmanjari.R;
 import com.google.android.material.tabs.TabLayout;
 
@@ -28,22 +30,22 @@ public class update extends AppCompatActivity implements TabLayout.OnTabSelected
 
         toolbar = (Toolbar) findViewById(R.id.etoolbar);
         toolbar.setTitle("GMIT");
-//        setSupportActionBar(toolbar);
 
-        //tableLayout=findViewById(R.id.etablayout);
         tabLayout = findViewById(R.id.etablayout);
-
 
         tabLayout.addTab(tabLayout.newTab().setText("BasicActivity"));
         tabLayout.addTab(tabLayout.newTab().setText("EduDetail"));
         tabLayout.addTab(tabLayout.newTab().setText("addDetail"));
-//     tabLayout.addTab(tabLayout.newTab().setText("logout"));
+
         tabLayout.setTabGravity(TabLayout.GRAVITY_CENTER);
         tabLayout.setVisibility(View.INVISIBLE);
         viewPager = findViewById(R.id.pager);
         pageAdapter adapter = new pageAdapter(getSupportFragmentManager(), tabLayout.getTabCount());
         viewPager.setAdapter(adapter);
         tabLayout.setOnTabSelectedListener(this);
+
+
+
 
     }
 

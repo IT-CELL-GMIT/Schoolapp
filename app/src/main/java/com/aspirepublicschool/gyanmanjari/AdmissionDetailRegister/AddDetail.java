@@ -82,6 +82,7 @@ public class AddDetail extends Fragment {
 
 
         SharedPreferences sp = this.getActivity().getSharedPreferences("FILE_NAME", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sp.edit();
         recidenceAddress = sp.getString("recidenceAddress", String.valueOf(-1));
         recidenceVillageArea = sp.getString("recidenceVillageArea", String.valueOf(-1));
         recidenceCity = sp.getString("recidenceCity", String.valueOf(-1));
@@ -144,6 +145,7 @@ public class AddDetail extends Fragment {
         totalMarks = String.valueOf(Integer.parseInt(mathsMarks) + Integer.parseInt(scienceMarks));
 
         SharedPreferences sp = this.getActivity().getSharedPreferences("FILE_NAME", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sp.edit();
         final String gender = sp.getString("gender", String.valueOf(-1));
         Medium = sp.getString("Medium", String.valueOf(-1));
         Group = sp.getString("Group", String.valueOf(-1));
@@ -158,6 +160,8 @@ public class AddDetail extends Fragment {
                     public void onResponse(String response) {
                         Toast.makeText(getContext(), response, Toast.LENGTH_SHORT).show();
                         progressDialog.dismiss();
+                        editor.putString("updateStatus","updated");
+                        editor.apply();
                         startActivity(new Intent(view.getContext(),MainActivity.class));
                         getActivity().finish();
 
