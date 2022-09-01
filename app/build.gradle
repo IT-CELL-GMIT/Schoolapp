@@ -90,6 +90,8 @@ dependencies {
 
     implementation 'com.hbb20:ccp:2.5.0'
 
+    implementation 'com.razorpay:checkout:1.6.20'
+
     implementation('com.paytm:pgplussdk:1.2.3') {
         transitive = true;
     }

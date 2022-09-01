@@ -10,6 +10,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.aspirepublicschool.gyanmanjari.DocumentUpload.DocumentUploadActivity;
+import com.aspirepublicschool.gyanmanjari.PaymentImplement.PaymentActivity;
 import com.aspirepublicschool.gyanmanjari.R;
 import com.aspirepublicschool.gyanmanjari.Test.ViewTestToday;
 
@@ -37,7 +38,7 @@ public class AttemptTestActivity extends AppCompatActivity {
         testStatus = sp.getString("Test", null);
 
         if (testStatus!=null){
-            startActivity(new Intent(AttemptTestActivity.this, DocumentUploadActivity.class));
+            startActivity(new Intent(AttemptTestActivity.this, PaymentActivity.class));
             finish();
         }
 
