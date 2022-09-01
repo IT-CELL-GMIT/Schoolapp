@@ -96,6 +96,21 @@ public class StuEduDetailActivity extends AppCompatActivity {
         saRecidenceCity = sp.getString("saRecidenceCity", String.valueOf(-1));
 
 
+
+        if (schoolName == String.valueOf(-1) ||
+                Medium == String.valueOf(-1) ||
+                Group == String.valueOf(-1) ||
+                mathsMarks == String.valueOf(-1) ||
+                scienceMarks == String.valueOf(-1)){
+
+            waitForRespnse();
+
+        }else {
+
+            startActivity(new Intent(StuEduDetailActivity.this, AddressDetailStuActivity.class));
+            finish();
+        }
+
         edMathsMarks.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -240,29 +255,6 @@ public class StuEduDetailActivity extends AppCompatActivity {
         });
 
 
-
-
-        if (schoolName == String.valueOf(-1) ||
-                Medium == String.valueOf(-1) ||
-                Group == String.valueOf(-1) ||
-                mathsMarks == String.valueOf(-1) ||
-                scienceMarks == String.valueOf(-1)){
-
-            waitForRespnse();
-
-        }else {
-
-            startActivity(new Intent(StuEduDetailActivity.this, AddressDetailStuActivity.class));
-            finish();
-        }
-
-        totalOfMarks.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                totalOfMarks.setText(totalMarks);
-            }
-        });
-
     }
 
     private void setTotalMarks(int marks) {
@@ -284,6 +276,7 @@ public class StuEduDetailActivity extends AppCompatActivity {
         btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 getData();
             }
         });
@@ -293,28 +286,23 @@ public class StuEduDetailActivity extends AppCompatActivity {
     private void getData() {
 
         int ID1 = radioGroup1.getCheckedRadioButtonId();
-        
-
         int ID2 = radioGroup2.getCheckedRadioButtonId();
 
-
         schoolName = edSchoolName.getText().toString();
-        mathsMarks = edMathsMarks.getText().toString();
-        scienceMarks = edScienceMarks.getText().toString();
+//        mathsMarks = edMathsMarks.getText().toString();
+//        scienceMarks = edScienceMarks.getText().toString();
         totalMarks = String.valueOf(Integer.parseInt(mathsMarks) + Integer.parseInt(scienceMarks));
 
         if (schoolName.isEmpty() ||
-                mathsMarks.isEmpty() ||
-                scienceMarks.isEmpty() ||
-                Medium.isEmpty() ||
-                Group.isEmpty()){
+                mathsMarks.equals(String.valueOf(-1)) ||
+                scienceMarks.equals(String.valueOf(-1))){
 
             Toast.makeText(this, "Please fill up every detail first", Toast.LENGTH_SHORT).show();
 
         }else if (findViewById(ID1) == null || findViewById(ID2) == null){
 
-            Toast.makeText(this, "Please all radio buttons", Toast.LENGTH_SHORT).show();
-            
+            Toast.makeText(this, "Please check all radio buttons", Toast.LENGTH_SHORT).show();
+
         }else if (Integer.parseInt(mathsMarks) > 80 || Integer.parseInt(scienceMarks) > 80){
 
             Toast.makeText(this, "Marks out of 80 can't be greater than 80", Toast.LENGTH_SHORT).show();
