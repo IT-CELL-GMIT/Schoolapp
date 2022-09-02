@@ -7,23 +7,22 @@
     tools:context=".AdmissionDetailRegister.update">
 
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/etoolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:background="#1A37F1"
-        app:titleTextColor="@color/white"
+<!--    <androidx.appcompat.widget.Toolbar-->
+<!--        android:id="@+id/etoolbar"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_alignParentEnd="true"-->
+<!--        android:background="#1A37F1"-->
+<!--        app:titleTextColor="@color/white"-->
 
-        tools:ignore="RtlCompat">
+<!--        tools:ignore="RtlCompat">-->
 
-    </androidx.appcompat.widget.Toolbar>
+<!--    </androidx.appcompat.widget.Toolbar>-->
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/etablayout"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_below="@+id/etoolbar"
         android:background="#ED0505"
         app:tabMode="scrollable"
         app:tabTextColor="#FFFFFF"></com.google.android.material.tabs.TabLayout>

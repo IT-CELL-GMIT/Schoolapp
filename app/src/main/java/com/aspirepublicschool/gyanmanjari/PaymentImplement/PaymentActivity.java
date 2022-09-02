@@ -1,7 +1,5 @@
 package com.aspirepublicschool.gyanmanjari.PaymentImplement;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
@@ -9,11 +7,11 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
-import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.aspirepublicschool.gyanmanjari.DocumentUpload.DocumentUploadActivity;
 import com.aspirepublicschool.gyanmanjari.R;
@@ -24,7 +22,7 @@ import com.razorpay.PaymentResultWithDataListener;
 
 import org.json.JSONObject;
 
-public class PaymentActivity extends AppCompatActivity implements PaymentResultWithDataListener, ExternalWalletListener {
+public class PaymentActivity extends AppCompatActivity implements PaymentResultWithDataListener,ExternalWalletListener {
 
     ProgressDialog progressDialog;
     String API_ID = "rzp_test_0RHVnRvOPZwYaO";  //RazourPay API ID
@@ -50,7 +48,9 @@ public class PaymentActivity extends AppCompatActivity implements PaymentResultW
         SharedPreferences sp = getSharedPreferences("FILE_NAME", MODE_PRIVATE);
         String paymentStatus = sp.getString("PaymentStatus", null);
 
-        if (paymentStatus == "PaymentDone"){
+       // Toast.makeText(this, paymentStatus, Toast.LENGTH_SHORT).show();
+
+        if (paymentStatus != null){
 
             startActivity(new Intent(getApplicationContext(), DocumentUploadActivity.class));
             finish();
@@ -104,6 +104,28 @@ public class PaymentActivity extends AppCompatActivity implements PaymentResultW
         }
 
     }
+
+//    @Override
+//    public void onExternalWalletSelected(String s, PaymentData paymentData) {
+//
+//       // try{
+////            alertDialogBuilder.setMessage("External Wallet Selected:\nPayment Data: "+paymentData.getData());
+////            alertDialogBuilder.show();
+////        }catch (Exception e){
+////            e.printStackTrace();
+////        }
+//
+//    }
+
+//    @Override
+//    public void onPaymentSuccess(String s, PaymentData paymentData) {
+//
+//    }
+
+//    @Override
+//    public void onPaymentError(int i, String s, PaymentData paymentData) {
+//
+//    }
 
     @Override
     public void onExternalWalletSelected(String s, PaymentData paymentData) {

@@ -53,6 +53,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.aspirepublicschool.gyanmanjari.AdmissionDetailRegister.update;
+import com.aspirepublicschool.gyanmanjari.DocumentUpload.DocumentUploadActivity;
 import com.aspirepublicschool.gyanmanjari.Doubt.DoubtSubject;
 import com.aspirepublicschool.gyanmanjari.DoubtSolving.ChatDoubt;
 import com.aspirepublicschool.gyanmanjari.DoubtSolving.Utils;
@@ -86,6 +87,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.File;
+import java.lang.annotation.Documented;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.text.SimpleDateFormat;
@@ -801,6 +803,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
             case R.id.update1:
                 startActivity(new Intent(MainActivity.this, update.class));
+
+            case R.id.action_DocumentUpload:
+                startActivity(new Intent(MainActivity.this, DocumentUploadActivity.class));
+
+
 
                 // do something
                 return true;

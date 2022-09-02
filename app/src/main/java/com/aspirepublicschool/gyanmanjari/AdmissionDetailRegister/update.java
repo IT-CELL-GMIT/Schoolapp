@@ -28,8 +28,8 @@ public class update extends AppCompatActivity implements TabLayout.OnTabSelected
         setContentView(R.layout.activity_update_detail);
         getSupportActionBar().hide();
 
-        toolbar = (Toolbar) findViewById(R.id.etoolbar);
-        toolbar.setTitle("GMIT");
+//        toolbar = (Toolbar) findViewById(R.id.etoolbar);
+//        toolbar.setTitle("GMIT");
 
         tabLayout = findViewById(R.id.etablayout);
 

@@ -16,6 +16,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -49,6 +50,7 @@ public class DocumentUploadActivity extends AppCompatActivity {
     byte[] bytes;
     String uriString, position;
     ProgressDialog progressDialog;
+    TextView skip;
 
     LinearLayout ll1;
 
@@ -64,6 +66,7 @@ public class DocumentUploadActivity extends AppCompatActivity {
         button5 = findViewById(R.id.button5);
         button6 = findViewById(R.id.button6);
         ll1 = findViewById(R.id.ll1);
+        skip = findViewById(R.id.skipDocument);
         progressDialog = new ProgressDialog(this);
 
         SharedPreferences sp = getSharedPreferences("FILE_NAME", MODE_PRIVATE);
@@ -93,6 +96,27 @@ public class DocumentUploadActivity extends AppCompatActivity {
             finish();
 
         }
+
+        skip.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                SharedPreferences sp = getSharedPreferences("FILE_NAME", MODE_PRIVATE);
+                SharedPreferences.Editor editor = sp.edit();
+
+                editor.putString("doc", "uploaded");
+                editor.putString("doc1", "uploaded");
+                editor.putString("doc2", "uploaded");
+                editor.putString("doc3", "uploaded");
+                editor.putString("doc4", "uploaded");
+                editor.putString("doc5", "uploaded");
+
+                editor.apply();
+
+                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                finish();
+            }
+        });
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override

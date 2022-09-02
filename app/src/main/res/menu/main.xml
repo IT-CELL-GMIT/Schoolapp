@@ -8,6 +8,12 @@
           app:showAsAction="never" />-->
 
     <item
+        android:id="@+id/action_DocumentUpload"
+        android:icon="@drawable/logout"
+        android:orderInCategory="100"
+        android:title="Upload Document"
+        app:showAsAction="never" />
+    <item
         android:id="@+id/action_Logout"
         android:icon="@drawable/logout"
         android:orderInCategory="100"

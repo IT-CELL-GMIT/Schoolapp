@@ -6,7 +6,7 @@ android {
     useLibrary 'org.apache.http.legacy'
     defaultConfig {
         applicationId "com.aspirepublicschool.gyanmanjari"
-        minSdkVersion 16
+        minSdkVersion 21
         targetSdkVersion 30
         multiDexEnabled true
         versionCode 43
@@ -52,6 +52,7 @@ dependencies {
     implementation 'com.android.volley:volley:1.2.1'
 
     implementation 'com.github.bumptech.glide:glide:4.10.0'
+    implementation 'com.google.android.gms:play-services-wallet:19.1.0'
 
     annotationProcessor 'com.github.bumptech.glide:compiler:4.10.0'
 
