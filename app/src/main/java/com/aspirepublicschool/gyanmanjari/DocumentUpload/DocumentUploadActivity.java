@@ -354,7 +354,15 @@ public class DocumentUploadActivity extends AppCompatActivity {
 
                                             editor.apply();
 
-                                            startActivity(new Intent(DocumentUploadActivity.this, update.class));
+                                            if (updateStatus != null && status == null){
+
+                                                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+
+                                            }else{
+                                                startActivity(new Intent(DocumentUploadActivity.this, MainActivity.class));
+                                            }
+
+
                                         }else
                                             Toast.makeText(DocumentUploadActivity.this, "some error occured try again", Toast.LENGTH_SHORT).show();
 
