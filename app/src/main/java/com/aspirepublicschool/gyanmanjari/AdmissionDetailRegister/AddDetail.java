@@ -57,7 +57,7 @@ public class AddDetail extends Fragment {
     public static EditText edSaRecidenceAddress, edSaRecidenceVillageArea, edSaRecidenceCity;
 
     String schoolName, Medium, Group, mathsMarks, scienceMarks, totalMarks;
-    RadioButton radioButton1, radioButton2;
+    RadioButton radioButton1, radioButton2, radioButton3;
 
     String surname, name, fatherName, mobileNo, alternateMN;
     String gender,id;
@@ -143,6 +143,24 @@ public class AddDetail extends Fragment {
         mathsMarks = edMathsMarks.getText().toString();
         scienceMarks = edScienceMarks.getText().toString();
         totalMarks = String.valueOf(Integer.parseInt(mathsMarks) + Integer.parseInt(scienceMarks));
+
+//        int id1, id2, id3;
+//
+//        id1 = radioGroup.getCheckedRadioButtonId();
+//        id2 = radioGroup1.getCheckedRadioButtonId();
+//        id3 = radioGroup2.getCheckedRadioButtonId();
+//
+//        if (view.findViewById(id1) != null ||
+//                view.findViewById(id2) != null ||
+//                        view.findViewById(id3) != null ){
+//            radioButton1 = view.findViewById(id1);
+//            radioButton2 = view.findViewById(id2);
+//            radioButton3 = view.findViewById(id3);
+//
+//            Medium = radioButton1.getText().toString();
+//            Group = radioButton2.getText().toString();
+//            gender = radioButton.getText().toString();
+//        }
 
         SharedPreferences sp = this.getActivity().getSharedPreferences("FILE_NAME", MODE_PRIVATE);
         SharedPreferences.Editor editor = sp.edit();

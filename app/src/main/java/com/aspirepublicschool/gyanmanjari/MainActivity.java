@@ -803,9 +803,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
             case R.id.update1:
                 startActivity(new Intent(MainActivity.this, update.class));
+                return true;
 
             case R.id.action_DocumentUpload:
-                startActivity(new Intent(MainActivity.this, DocumentUploadActivity.class));
+                startActivity(new Intent(MainActivity.this, DocumentUploadActivity.class).putExtra("from main", "from main"));
 
 
 

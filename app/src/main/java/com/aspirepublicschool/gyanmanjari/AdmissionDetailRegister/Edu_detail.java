@@ -37,10 +37,8 @@ public class Edu_detail extends Fragment {
         edScienceMarks = view.findViewById(R.id.scienceMarks);
 
         radioGroup1 = view.findViewById(R.id.rgMedium);
-        radioGroup1.check(R.id.rbGujrati);
 
         radioGroup2 = view.findViewById(R.id.rgGroup);
-        radioGroup2.check(R.id.rbA);
 
         tv = view.findViewById(R.id.totalOfMarks);
 

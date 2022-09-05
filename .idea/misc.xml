@@ -10,6 +10,7 @@
         <entry key="..\:/GMITProject/Schoolapp/app/src/main/res/layout/activity_admission_test_result.xml" value="0.20677083333333332" />
         <entry key="..\:/GMITProject/Schoolapp/app/src/main/res/layout/activity_attempt_test.xml" value="0.20677083333333332" />
         <entry key="..\:/GMITProject/Schoolapp/app/src/main/res/layout/activity_basic_stu_info.xml" value="0.20677083333333332" />
+        <entry key="..\:/GMITProject/Schoolapp/app/src/main/res/layout/activity_chemistry.xml" value="0.20677083333333332" />
         <entry key="..\:/GMITProject/Schoolapp/app/src/main/res/layout/activity_document_upload.xml" value="0.19270833333333334" />
         <entry key="..\:/GMITProject/Schoolapp/app/src/main/res/layout/activity_due_payment.xml" value="0.25" />
         <entry key="..\:/GMITProject/Schoolapp/app/src/main/res/layout/activity_jee.xml" value="0.20677083333333332" />
@@ -21,7 +22,10 @@
         <entry key="..\:/GMITProject/Schoolapp/app/src/main/res/layout/activity_payments_detail.xml" value="0.20677083333333332" />
         <entry key="..\:/GMITProject/Schoolapp/app/src/main/res/layout/activity_stu_document.xml" value="0.20677083333333332" />
         <entry key="..\:/GMITProject/Schoolapp/app/src/main/res/layout/activity_stu_edu_detail.xml" value="0.20677083333333332" />
+        <entry key="..\:/GMITProject/Schoolapp/app/src/main/res/layout/activity_student_login.xml" value="0.20677083333333332" />
         <entry key="..\:/GMITProject/Schoolapp/app/src/main/res/layout/activity_test.xml" value="0.20677083333333332" />
+        <entry key="..\:/GMITProject/Schoolapp/app/src/main/res/layout/activity_test_tabbed.xml" value="0.20677083333333332" />
+        <entry key="..\:/GMITProject/Schoolapp/app/src/main/res/layout/activity_test_tine.xml" value="0.20677083333333332" />
         <entry key="..\:/GMITProject/Schoolapp/app/src/main/res/layout/activity_update_detail.xml" value="0.20677083333333332" />
         <entry key="..\:/GMITProject/Schoolapp/app/src/main/res/layout/add_detail.xml" value="0.20677083333333332" />
         <entry key="..\:/GMITProject/Schoolapp/app/src/main/res/layout/basic_activity.xml" value="0.20677083333333332" />

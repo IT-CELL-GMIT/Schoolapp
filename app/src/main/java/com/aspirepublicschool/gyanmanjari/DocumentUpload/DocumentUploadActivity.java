@@ -69,6 +69,9 @@ public class DocumentUploadActivity extends AppCompatActivity {
         skip = findViewById(R.id.skipDocument);
         progressDialog = new ProgressDialog(this);
 
+        Intent intent = getIntent();
+        String status = intent.getStringExtra("from main");
+
         SharedPreferences sp = getSharedPreferences("FILE_NAME", MODE_PRIVATE);
 
         String updateStatus = sp.getString("updateStatus", null);
@@ -80,20 +83,21 @@ public class DocumentUploadActivity extends AppCompatActivity {
         Doc4 = sp.getString("doc4", String.valueOf(-1));
         Doc5 = sp.getString("doc5", String.valueOf(-1));
 
-
-        if (updateStatus != null){
+        if (updateStatus != null && status == null){
 
             startActivity(new Intent(getApplicationContext(), MainActivity.class));
 
-        } else if (Doc != String.valueOf(-1) ||
+        }
+
+         if (Doc != String.valueOf(-1) ||
                 Doc1 != String.valueOf(-1) ||
                 Doc2 != String.valueOf(-1) ||
                 Doc3 != String.valueOf(-1) ||
                 Doc4 != String.valueOf(-1) ||
                 Doc5 != String.valueOf(-1) ){
 
-            startActivity(new Intent(this, update.class));
-            finish();
+//            startActivity(new Intent(this, update.class));
+//            finish();
 
         }
 
@@ -104,12 +108,13 @@ public class DocumentUploadActivity extends AppCompatActivity {
                 SharedPreferences sp = getSharedPreferences("FILE_NAME", MODE_PRIVATE);
                 SharedPreferences.Editor editor = sp.edit();
 
-                editor.putString("doc", "uploaded");
-                editor.putString("doc1", "uploaded");
-                editor.putString("doc2", "uploaded");
-                editor.putString("doc3", "uploaded");
-                editor.putString("doc4", "uploaded");
-                editor.putString("doc5", "uploaded");
+                editor.putString("updateStatus", "skipped");
+                editor.putString("doc", "remaining");
+                editor.putString("doc1", "remaining");
+                editor.putString("doc2", "remaining");
+                editor.putString("doc3", "remaining");
+                editor.putString("doc4", "remaining");
+                editor.putString("doc5", "remaining");
 
                 editor.apply();
 
