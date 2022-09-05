@@ -50,7 +50,8 @@
             android:exported="true"></activity>
         <activity
             android:name=".AdmissionDetailRegister.update"
-            android:exported="true"></activity>
+            android:exported="true">
+        </activity>
         <activity
             android:name=".AdmissionRegister.StuEduDetailActivity"
             android:exported="false" />
@@ -348,7 +349,8 @@
         <activity
             android:name=".Test.ViewTestToday"
             android:label="Test/Key"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".MainActivity" >
+        </activity>
         <activity
             android:name=".Homework.InsertHomeWork"
             android:label="Submit Homework"

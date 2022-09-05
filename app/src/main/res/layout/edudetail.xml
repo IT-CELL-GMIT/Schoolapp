@@ -91,7 +91,7 @@
                     android:textStyle="bold" />
 
                 <RadioGroup
-                    android:id="@+id/rgMedium"
+                    android:id="@+id/rgMediumEdu"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
@@ -136,7 +136,7 @@
                     android:textStyle="bold" />
 
                 <RadioGroup
-                    android:id="@+id/rgGroup"
+                    android:id="@+id/rgGroupEdu"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">

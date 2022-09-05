@@ -5,14 +5,17 @@ import static android.content.Context.MODE_PRIVATE;
 import static com.aspirepublicschool.gyanmanjari.AdmissionDetailRegister.Edu_detail.edMathsMarks;
 import static com.aspirepublicschool.gyanmanjari.AdmissionDetailRegister.Edu_detail.edSchoolName;
 import static com.aspirepublicschool.gyanmanjari.AdmissionDetailRegister.Edu_detail.edScienceMarks;
-import static com.aspirepublicschool.gyanmanjari.AdmissionDetailRegister.Edu_detail.radioGroup1;
+import static com.aspirepublicschool.gyanmanjari.AdmissionDetailRegister.Edu_detail.getRadio2;
+import static com.aspirepublicschool.gyanmanjari.AdmissionDetailRegister.Edu_detail.getRadio3;
 import static com.aspirepublicschool.gyanmanjari.AdmissionDetailRegister.Edu_detail.radioGroup2;
+import static com.aspirepublicschool.gyanmanjari.AdmissionDetailRegister.Edu_detail.radioGroup3;
 import static com.aspirepublicschool.gyanmanjari.AdmissionDetailRegister.basic_activity.edAlternateMN;
 import static com.aspirepublicschool.gyanmanjari.AdmissionDetailRegister.basic_activity.edFatherName;
 import static com.aspirepublicschool.gyanmanjari.AdmissionDetailRegister.basic_activity.edMobileNo;
 import static com.aspirepublicschool.gyanmanjari.AdmissionDetailRegister.basic_activity.edName;
 import static com.aspirepublicschool.gyanmanjari.AdmissionDetailRegister.basic_activity.edSurName;
-import static com.aspirepublicschool.gyanmanjari.AdmissionDetailRegister.basic_activity.radioGroup;
+import static com.aspirepublicschool.gyanmanjari.AdmissionDetailRegister.basic_activity.getRadio1;
+import static com.aspirepublicschool.gyanmanjari.AdmissionDetailRegister.basic_activity.radioGroup1;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -61,8 +64,6 @@ public class AddDetail extends Fragment {
 
     String surname, name, fatherName, mobileNo, alternateMN;
     String gender,id;
-//    Button update;
-    RadioButton radioButton;
 
     ProgressDialog progressDialog;
 
@@ -117,7 +118,6 @@ public class AddDetail extends Fragment {
        edSaRecidenceCity.setText(saRecidenceCity);
 
 
-
     }
 
     private void getAllData() {
@@ -144,52 +144,18 @@ public class AddDetail extends Fragment {
         scienceMarks = edScienceMarks.getText().toString();
         totalMarks = String.valueOf(Integer.parseInt(mathsMarks) + Integer.parseInt(scienceMarks));
 
-//        int id1, id2, id3;
-//
-//        id1 = radioGroup.getCheckedRadioButtonId();
-//        id2 = radioGroup1.getCheckedRadioButtonId();
-//        id3 = radioGroup2.getCheckedRadioButtonId();
-//
-//        if (view.findViewById(id1) != null ||
-//                view.findViewById(id2) != null ||
-//                        view.findViewById(id3) != null ){
-//
-//            radioButton1 = view.findViewById(id1);
-//            radioButton2 = view.findViewById(id2);
-//            radioButton3 = view.findViewById(id3);
-//
-//            Medium = radioButton1.getText().toString();
-//            Group = radioButton2.getText().toString();
-//            gender = radioButton.getText().toString();
-
-            uploadData();
-
-//        }
-//        else {
-//            progressDialog.dismiss();
-//            Toast.makeText(getContext(), "select all radio buttons", Toast.LENGTH_SHORT).show();
-//        }
-
-
-
-
-//        int ID = radioGroup.getCheckedRadioButtonId();
-//        radioButton = view.findViewById(ID);
-//        gender = radioButton.getText().toString();
-//
-//        int ID1 = radioGroup1.getCheckedRadioButtonId();
-//        radioButton1 = view.findViewById(ID1);
-//        Medium = radioButton1.getText().toString();
-//
-//        int ID2 = radioGroup2.getCheckedRadioButtonId();
-//        radioButton2 = view.findViewById(ID2);
-//        Group = radioButton2.getText().toString();
-
-
-
-
-
-
+           gender = getRadio1();
+           Medium = getRadio2();
+           Group = getRadio3();
+        
+           if (gender != null ||
+           Medium != null ||
+           Group != null){
+               uploadData();
+           }else {
+               progressDialog.dismiss();
+               Toast.makeText(getContext(), "Radio Groups kon select karega!!!\nMere liye rakkhe h?", Toast.LENGTH_SHORT).show();
+           }
 
     }
 
@@ -209,11 +175,11 @@ public class AddDetail extends Fragment {
                     @Override
                     public void onResponse(String response) {
                         Toast.makeText(getContext(), response, Toast.LENGTH_SHORT).show();
-                        progressDialog.dismiss();
+
                         editor.putString("updateStatus","updated");
                         editor.apply();
-                        startActivity(new Intent(view.getContext(),MainActivity.class));
-                        getActivity().finish();
+
+                        setAtShared();
 
                     }
                 },
@@ -260,6 +226,40 @@ public class AddDetail extends Fragment {
 
 
 
+
+    }
+
+    private void setAtShared() {
+
+        SharedPreferences sp = this.getActivity().getSharedPreferences("FILE_NAME", MODE_PRIVATE);
+        SharedPreferences.Editor edit = sp.edit();
+
+        edit.putString("surname", surname);
+        edit.putString("name", name);
+        edit.putString("fatherName", fatherName);
+        edit.putString("mobileNo", mobileNo);
+        edit.putString("alternateMN", alternateMN);
+        edit.putString("gender", gender);
+
+        edit.putString("schoolName", schoolName);
+        edit.putString("Medium", Medium);
+        edit.putString("Group", Group);
+        edit.putString("mathsMarks", mathsMarks);
+        edit.putString("scienceMarks", scienceMarks);
+        edit.putString("totalMarks", totalMarks);
+
+        edit.putString("recidenceAddress", recidenceAddress);
+        edit.putString("recidenceVillageArea", recidenceVillageArea);
+        edit.putString("recidenceCity", recidenceCity);
+        edit.putString("saRecidenceAddress", saRecidenceAddress);
+        edit.putString("saRecidenceVillageArea", saRecidenceVillageArea);
+        edit.putString("saRecidenceCity", saRecidenceCity);
+
+        edit.apply();
+
+        progressDialog.dismiss();
+        startActivity(new Intent(view.getContext(),MainActivity.class));
+        getActivity().finish();
 
     }
 

@@ -23,10 +23,10 @@ import com.aspirepublicschool.gyanmanjari.R;
 
 public class basic_activity extends Fragment {
 
-    View view;
+    static View view;
    public static EditText edSurName, edName, edFatherName, edMobileNo, edAlternateMN;
-    public static RadioGroup radioGroup;
-    RadioButton radioButton1, radioButton2;
+    public static RadioGroup radioGroup1;
+    public static RadioButton radioButton1, radioButton2;
 
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.basic_activity, container, false);
@@ -37,8 +37,7 @@ public class basic_activity extends Fragment {
         edMobileNo = view.findViewById(R.id.mobileNo);
         edAlternateMN = view.findViewById(R.id.alternateMN);
 
-        radioGroup = view.findViewById(R.id.rdgmedium);
-        radioGroup.check(R.id.rgbMale);
+        radioGroup1 = view.findViewById(R.id.rdgmediumBA);
 
 //        radioButton1 = new RadioButton(view.getContext());
 //        radioButton2 = new RadioButton(view.getContext());
@@ -74,6 +73,18 @@ public class basic_activity extends Fragment {
         edFatherName.setText(fatherName);
         edMobileNo.setText(mobileNo);
         edAlternateMN.setText(alternate);
+
+    }
+
+    public static String getRadio1(){
+
+        int ID = radioGroup1.getCheckedRadioButtonId();
+        if (view.findViewById(ID) == null){
+            return null;
+        }else {
+            radioButton1 = view.findViewById(ID);
+            return radioButton1.getText().toString();
+        }
 
     }
 

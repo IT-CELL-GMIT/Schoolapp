@@ -21,7 +21,7 @@
         app:showAsAction="never" />
     <item
         android:id="@+id/update1"
-        android:title="update"
+        android:title="Update Profile"
         app:showAsAction="never">
     </item>
 

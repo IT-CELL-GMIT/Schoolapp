@@ -85,9 +85,9 @@ public class BasicStuInfoActivity extends AppCompatActivity {
         if (edSurName.getText().toString().isEmpty() ||
                 edName.getText().toString().isEmpty() ||
                 edFatherName.getText().toString().isEmpty() ||
-                edMobileNo.getText().toString().isEmpty() ){
+                edMobileNo.getText().toString().length()<8 ){
 
-            Toast.makeText(this, "Please fill up every detail", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Please fill up every detail correctly", Toast.LENGTH_SHORT).show();
 
         }
         else if (findViewById(ID) == null){

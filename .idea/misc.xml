@@ -12,11 +12,13 @@
         <entry key="..\:/GMITProject/Schoolapp/app/src/main/res/layout/activity_basic_stu_info.xml" value="0.20677083333333332" />
         <entry key="..\:/GMITProject/Schoolapp/app/src/main/res/layout/activity_chemistry.xml" value="0.20677083333333332" />
         <entry key="..\:/GMITProject/Schoolapp/app/src/main/res/layout/activity_document_upload.xml" value="0.19270833333333334" />
+        <entry key="..\:/GMITProject/Schoolapp/app/src/main/res/layout/activity_download_test_key.xml" value="0.20677083333333332" />
         <entry key="..\:/GMITProject/Schoolapp/app/src/main/res/layout/activity_due_payment.xml" value="0.25" />
         <entry key="..\:/GMITProject/Schoolapp/app/src/main/res/layout/activity_jee.xml" value="0.20677083333333332" />
         <entry key="..\:/GMITProject/Schoolapp/app/src/main/res/layout/activity_jee_test.xml" value="0.20677083333333332" />
         <entry key="..\:/GMITProject/Schoolapp/app/src/main/res/layout/activity_maths.xml" value="0.20677083333333332" />
         <entry key="..\:/GMITProject/Schoolapp/app/src/main/res/layout/activity_new_admission_login.xml" value="0.20677083333333332" />
+        <entry key="..\:/GMITProject/Schoolapp/app/src/main/res/layout/activity_new_test_row.xml" value="0.20677083333333332" />
         <entry key="..\:/GMITProject/Schoolapp/app/src/main/res/layout/activity_pay_tmactivity.xml" value="0.20677083333333332" />
         <entry key="..\:/GMITProject/Schoolapp/app/src/main/res/layout/activity_payment.xml" value="0.20677083333333332" />
         <entry key="..\:/GMITProject/Schoolapp/app/src/main/res/layout/activity_payments_detail.xml" value="0.20677083333333332" />
@@ -24,13 +26,24 @@
         <entry key="..\:/GMITProject/Schoolapp/app/src/main/res/layout/activity_stu_edu_detail.xml" value="0.20677083333333332" />
         <entry key="..\:/GMITProject/Schoolapp/app/src/main/res/layout/activity_student_login.xml" value="0.20677083333333332" />
         <entry key="..\:/GMITProject/Schoolapp/app/src/main/res/layout/activity_test.xml" value="0.20677083333333332" />
+        <entry key="..\:/GMITProject/Schoolapp/app/src/main/res/layout/activity_test_material.xml" value="0.20677083333333332" />
+        <entry key="..\:/GMITProject/Schoolapp/app/src/main/res/layout/activity_test_pdf_wise.xml" value="0.20677083333333332" />
+        <entry key="..\:/GMITProject/Schoolapp/app/src/main/res/layout/activity_test_row.xml" value="0.20677083333333332" />
         <entry key="..\:/GMITProject/Schoolapp/app/src/main/res/layout/activity_test_tabbed.xml" value="0.20677083333333332" />
         <entry key="..\:/GMITProject/Schoolapp/app/src/main/res/layout/activity_test_tine.xml" value="0.20677083333333332" />
+        <entry key="..\:/GMITProject/Schoolapp/app/src/main/res/layout/activity_test_web.xml" value="0.20677083333333332" />
         <entry key="..\:/GMITProject/Schoolapp/app/src/main/res/layout/activity_update_detail.xml" value="0.20677083333333332" />
+        <entry key="..\:/GMITProject/Schoolapp/app/src/main/res/layout/activity_view_test_today.xml" value="0.20677083333333332" />
+        <entry key="..\:/GMITProject/Schoolapp/app/src/main/res/layout/activity_wrt__test.xml" value="0.20677083333333332" />
+        <entry key="..\:/GMITProject/Schoolapp/app/src/main/res/layout/activity_wrt_test_row.xml" value="0.20677083333333332" />
         <entry key="..\:/GMITProject/Schoolapp/app/src/main/res/layout/add_detail.xml" value="0.20677083333333332" />
         <entry key="..\:/GMITProject/Schoolapp/app/src/main/res/layout/basic_activity.xml" value="0.20677083333333332" />
         <entry key="..\:/GMITProject/Schoolapp/app/src/main/res/layout/edudetail.xml" value="0.20677083333333332" />
+        <entry key="..\:/GMITProject/Schoolapp/app/src/main/res/layout/fragment_class_test.xml" value="0.20677083333333332" />
+        <entry key="..\:/GMITProject/Schoolapp/app/src/main/res/layout/fragment_class_test_time_table.xml" value="0.20677083333333332" />
         <entry key="..\:/GMITProject/Schoolapp/app/src/main/res/layout/fragment_question_fragmnet.xml" value="0.20677083333333332" />
+        <entry key="..\:/GMITProject/Schoolapp/app/src/main/res/layout/fragment_test_time_table.xml" value="0.20677083333333332" />
+        <entry key="..\:/GMITProject/Schoolapp/app/src/main/res/menu/main.xml" value="0.20677083333333332" />
         <entry key="..\:/Users/himan/AndroidStudioProjects/Schoolapp/app/src/main/res/layout/activity_otplogin.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/himan/AndroidStudioProjects/Schoolapp/app/src/main/res/layout/activity_otpregister_verification.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/himan/AndroidStudioProjects/Schoolapp/app/src/main/res/layout/activity_payments_detail.xml" value="0.27447916666666666" />
@@ -80,9 +93,6 @@
         <entry key="..\:/Users/pc/Desktop/schoolapp/app/src/main/res/layout/edudetail.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/pc/Desktop/schoolapp/app/src/main/res/menu/main.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/pc/Desktop/schoolapp/app/src/main/res/menu/main_menu.xml" value="0.20416666666666666" />
-        <entry key="..\:/schoolapp/app/src/main/res/layout/activity_document_upload.xml" value="0.27447916666666666" />
-        <entry key="..\:/schoolapp/app/src/main/res/layout/basic_activity.xml" value="0.27447916666666666" />
-        <entry key="..\:/schoolapp/app/src/main/res/layout/edudetail.xml" value="0.27447916666666666" />
       </map>
     </option>
   </component>

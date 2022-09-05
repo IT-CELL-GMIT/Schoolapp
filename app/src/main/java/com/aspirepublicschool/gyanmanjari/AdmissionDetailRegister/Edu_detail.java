@@ -20,12 +20,11 @@ import com.aspirepublicschool.gyanmanjari.R;
 
 public class Edu_detail extends Fragment {
 
-    View view;
+    static View view;
     String schoolName, Medium, Group, mathsMarks, scienceMarks, totalMarks;
     public static EditText edSchoolName, edMathsMarks, edScienceMarks;
-    RadioButton radioButton1, radioButton2;
-    RadioButton radioButton3, radioButton4, radioButton5;
-    public static RadioGroup radioGroup1;
+    public static RadioButton radioButton3, radioButton2;
+    public static RadioGroup radioGroup3;
     public static RadioGroup radioGroup2;
     TextView tv;
 
@@ -36,11 +35,8 @@ public class Edu_detail extends Fragment {
         edMathsMarks = view.findViewById(R.id.mathsMarks);
         edScienceMarks = view.findViewById(R.id.scienceMarks);
 
-        radioGroup1 = view.findViewById(R.id.rgMedium);
-        radioGroup1.check(R.id.rbGujrati);
-
-        radioGroup2 = view.findViewById(R.id.rgGroup);
-        radioGroup2.check(R.id.rbA);
+        radioGroup2 = view.findViewById(R.id.rgMediumEdu);
+        radioGroup3 = view.findViewById(R.id.rgGroupEdu);
 
         tv = view.findViewById(R.id.totalOfMarks);
 
@@ -66,4 +62,25 @@ public class Edu_detail extends Fragment {
         tv.setText(totalMarks);
 
     }
+
+    public static String getRadio2(){
+        int ID = radioGroup2.getCheckedRadioButtonId();
+        if (view.findViewById(ID) == null){
+            return null;
+        }else {
+            radioButton2 = view.findViewById(ID);
+            return radioButton2.getText().toString();
+        }
+    }
+    public static String getRadio3(){
+        int ID = radioGroup3.getCheckedRadioButtonId();
+        if (view.findViewById(ID) == null){
+            return null;
+        }else {
+            radioButton3 = view.findViewById(ID);
+            return radioButton3.getText().toString();
+        }
+    }
+
+
 }
