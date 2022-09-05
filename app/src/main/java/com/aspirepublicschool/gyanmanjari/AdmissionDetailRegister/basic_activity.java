@@ -38,6 +38,7 @@ public class basic_activity extends Fragment {
         edAlternateMN = view.findViewById(R.id.alternateMN);
 
         radioGroup = view.findViewById(R.id.rdgmedium);
+        radioGroup.check(R.id.rgbMale);
 
 //        radioButton1 = new RadioButton(view.getContext());
 //        radioButton2 = new RadioButton(view.getContext());

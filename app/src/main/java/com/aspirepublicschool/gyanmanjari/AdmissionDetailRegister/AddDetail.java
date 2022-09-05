@@ -153,6 +153,7 @@ public class AddDetail extends Fragment {
 //        if (view.findViewById(id1) != null ||
 //                view.findViewById(id2) != null ||
 //                        view.findViewById(id3) != null ){
+//
 //            radioButton1 = view.findViewById(id1);
 //            radioButton2 = view.findViewById(id2);
 //            radioButton3 = view.findViewById(id3);
@@ -160,8 +161,39 @@ public class AddDetail extends Fragment {
 //            Medium = radioButton1.getText().toString();
 //            Group = radioButton2.getText().toString();
 //            gender = radioButton.getText().toString();
+
+            uploadData();
+
+//        }
+//        else {
+//            progressDialog.dismiss();
+//            Toast.makeText(getContext(), "select all radio buttons", Toast.LENGTH_SHORT).show();
 //        }
 
+
+
+
+//        int ID = radioGroup.getCheckedRadioButtonId();
+//        radioButton = view.findViewById(ID);
+//        gender = radioButton.getText().toString();
+//
+//        int ID1 = radioGroup1.getCheckedRadioButtonId();
+//        radioButton1 = view.findViewById(ID1);
+//        Medium = radioButton1.getText().toString();
+//
+//        int ID2 = radioGroup2.getCheckedRadioButtonId();
+//        radioButton2 = view.findViewById(ID2);
+//        Group = radioButton2.getText().toString();
+
+
+
+
+
+
+
+    }
+
+    private void uploadData() {
         SharedPreferences sp = this.getActivity().getSharedPreferences("FILE_NAME", MODE_PRIVATE);
         SharedPreferences.Editor editor = sp.edit();
         final String gender = sp.getString("gender", String.valueOf(-1));
@@ -228,32 +260,6 @@ public class AddDetail extends Fragment {
 
 
 
-
-//        int ID = radioGroup.getCheckedRadioButtonId();
-//        radioButton = view.findViewById(ID);
-//        gender = radioButton.getText().toString();
-//
-//        int ID1 = radioGroup1.getCheckedRadioButtonId();
-//        radioButton1 = view.findViewById(ID1);
-//        Medium = radioButton1.getText().toString();
-//
-//        int ID2 = radioGroup2.getCheckedRadioButtonId();
-//        radioButton2 = view.findViewById(ID2);
-//        Group = radioButton2.getText().toString();
-
-
-
-
-
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-
-                progressDialog.dismiss();
-                startActivity(new Intent(view.getContext(), MainActivity.class));
-
-            }
-        }, 2000);
 
     }
 
