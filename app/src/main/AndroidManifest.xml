@@ -315,7 +315,8 @@
         <activity
             android:name=".Test.TestActivity"
             android:label="Test"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait" >
+        </activity>
         <activity
             android:name=".Test.TestWeb"
             android:label="Test"

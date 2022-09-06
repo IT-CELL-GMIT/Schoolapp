@@ -45,26 +45,16 @@ public class PaymentActivity extends AppCompatActivity implements PaymentResultW
             //do nothing
         });
 
-        SharedPreferences sp = getSharedPreferences("FILE_NAME", MODE_PRIVATE);
-        String paymentStatus = sp.getString("PaymentStatus", null);
 
-       // Toast.makeText(this, paymentStatus, Toast.LENGTH_SHORT).show();
 
-        if (paymentStatus != null){
-
-            startActivity(new Intent(getApplicationContext(), DocumentUploadActivity.class));
-            finish();
-
-        }
-
-        btnPay.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+//        btnPay.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
 //                progressDialog.setMessage("Please wait...");
 //                progressDialog.show();
                 startPayment();
-            }
-        });
+//            }
+//        });
 
     }
 

@@ -83,6 +83,9 @@ public class TestActivity extends AppCompatActivity
     //old way to show network alert
 //    private BroadcastReceiver mNetworkReceiver;
 
+    public static ArrayList<String> answers = new ArrayList<>();
+    int marks = 0;
+
     //network
     public NetworkChangeReceiver receiver;
     Boolean bl = true;
@@ -159,12 +162,35 @@ public class TestActivity extends AppCompatActivity
         Btnsubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 final AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(TestActivity.this);
                 alertDialogBuilder.setMessage("Are you sure, You wanted to submit test?..");
                 alertDialogBuilder.setPositiveButton("Yes",
                         new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface arg0, int arg1) {
+
+                                for (int i=0; i<DynamicFragment.selectedOpAns.size(); i++){
+
+
+                                    if (DynamicFragment.selectedOpAns.get(i) == true){
+                                        marks++;
+                                    }
+
+                                }
+                                Toast.makeText(ctx, "Total Marks : " + String.valueOf(marks), Toast.LENGTH_SHORT).show();
+                                SharedPreferences sp = getSharedPreferences("MARKSTEST", MODE_PRIVATE);
+                                SharedPreferences.Editor edit = sp.edit();
+
+                                edit.putString("TotalMarks", String.valueOf(DynamicFragment.selectedOpAns.size()));
+                                edit.putString("marksMCQ", String.valueOf(marks));
+                                edit.putString("Test_Status", "GIVEN");
+
+                                answers.clear();
+                                DynamicFragment.selectedOpAns.clear();
+
+                                edit.apply();
+
                                 timer.cancel();
                                 saveData();
                             }
@@ -369,19 +395,22 @@ public class TestActivity extends AppCompatActivity
                                 "d": "D"
                         },*/
                             JSONObject object=array.getJSONObject(i);
-                            testQuestionArrayList.add(new TestQuestion(object.getString("qid"),
+                            testQuestionArrayList.add(new TestQuestion(
+                                    object.getString("qid"),
                                     object.getString("question"),
                                     object.getString("a"),
                                     object.getString("b"),
-                                    object.getString("c")
-                                    ,object.getString("d"),
-                                    "Not Set",object.getString("q_img"),
+                                    object.getString("c"),
+                                    object.getString("d"),
+                                    "Not Set",
+                                    object.getString("q_img"),
                                     object.getString("a_img"),
-                                    object.getString("b_img")
-                                    ,object.getString("c_img"),
+                                    object.getString("b_img"),
+                                    object.getString("c_img"),
                                     object.getString("d_img"),
                                     false,
-                                    tst_id,object.getString("subject")));
+                                    tst_id,
+                                    object.getString("subject")));
                         }
                         for(int j=0;j<testQuestionArrayList.size();j++)
                         {
@@ -584,6 +613,15 @@ public class TestActivity extends AppCompatActivity
                                     object.getString("c"),object.getString("d"),object.getString("ans"),object.getString("q_img"),object.getString("a_img"),
                                     object.getString("b_img")
                                     ,object.getString("c_img"),object.getString("d_img"),object.getBoolean("mark"),tst_id,object.getString("subject")));
+
+                            String ans;
+                            ans = object.getString("ans");
+                            answers.add(ans);
+                            if (ans.trim().equalsIgnoreCase("A")){
+                                DynamicFragment.selectedOpAns.add(true);
+                            }else{
+                                DynamicFragment.selectedOpAns.add(false);
+                            }
                         }
                        /* for(int j=0;j<testQuestionArrayList.size();j++) {
                             if(dataflags==false) {

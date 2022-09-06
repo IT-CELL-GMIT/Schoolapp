@@ -20,8 +20,10 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.aspirepublicschool.gyanmanjari.Admission.AdmissionTestResultActivity;
 import com.aspirepublicschool.gyanmanjari.Common;
 import com.aspirepublicschool.gyanmanjari.MainActivity;
+import com.aspirepublicschool.gyanmanjari.PaymentImplement.PaymentActivity;
 import com.aspirepublicschool.gyanmanjari.R;
 
 import org.json.JSONArray;
@@ -42,6 +44,15 @@ public class ViewTestToday extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_test_today);
         allocatememory();
+
+        SharedPreferences sp = getSharedPreferences("MARKSTEST", MODE_PRIVATE);
+        String testStatus = sp.getString("Test_Status", null);
+
+        if (testStatus != null){
+            startActivity(new Intent(this, AdmissionTestResultActivity.class));
+            finish();
+        }
+
        /* LocationManager locMan = (LocationManager) ViewTestToday.this.getSystemService(this.LOCATION_SERVICE);
         if (checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && checkSelfPermission(Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             // TODO: Consider calling

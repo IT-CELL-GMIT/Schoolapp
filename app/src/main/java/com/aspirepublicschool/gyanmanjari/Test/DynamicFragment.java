@@ -59,6 +59,7 @@ public class DynamicFragment extends Fragment {
     CardView card_view_question1;
     RadioButton a, b, c, d, e;
     ArrayList<TestQuestion> testQuestions;
+    public static ArrayList<Boolean> selectedOpAns = new ArrayList<>(6);
 
     @SuppressLint("ResourceType")
     @Nullable
@@ -1210,6 +1211,7 @@ public class DynamicFragment extends Fragment {
             public void onClick(View v) {
 
                 if (TestActivity.testQuestionArrayList.get(val).isMark() == true) {
+
                     if (TestActivity.testQuestionArrayList.get(val).getSelected().equals("Not Set")) {
                         TestActivity.testQuestionArrayList.get(val).setMark(false);
                         TestActivity.tabLayout.getTabAt(val).setText("");
@@ -1270,6 +1272,13 @@ public class DynamicFragment extends Fragment {
     }
 
     private void saveAnswers(final String tst_id, final String q_id, final String answer, final Boolean mark) {
+
+        if (TestActivity.answers.get(val).equals(answer)){
+            selectedOpAns.set(val, true);
+        }else {
+            selectedOpAns.set(val, false);
+        }
+
         String Webserviceurl= Common.GetWebServiceURL()+"answersubmittest.php";
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getContext());
         final String sc_id = preferences.getString("sc_id","none").toUpperCase();

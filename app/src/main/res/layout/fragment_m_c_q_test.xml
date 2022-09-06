@@ -305,12 +305,13 @@
             app:tabGravity="fill"
             app:tabIndicatorColor="@android:color/holo_red_dark"
             app:tabMode="scrollable"
-            app:tabTextColor="@android:color/white"/>
+            app:tabTextColor="@android:color/white" />
+
         <androidx.viewpager.widget.ViewPager
             android:id="@+id/viewPager"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@id/tabLayout"/>
+            android:layout_below="@id/tabLayout" />
     </RelativeLayout>
 
 </FrameLayout>
