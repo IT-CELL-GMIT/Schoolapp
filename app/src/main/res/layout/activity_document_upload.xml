@@ -249,7 +249,7 @@
             android:layout_gravity="center"
             android:text="*your documents should be in PDF formate"
             android:textColor="@color/primary_text"
-            android:textSize="10dp"
+            android:textSize="11dp"
             android:textStyle="bold"></TextView>
         <TextView
             android:id="@+id/skipDocument"
@@ -259,7 +259,7 @@
             android:layout_gravity="center"
             android:text="*skip"
             android:textColor="@color/primary_text"
-            android:textSize="10dp"
+            android:textSize="18dp"
             android:textStyle="bold"></TextView>
 
         <Button
