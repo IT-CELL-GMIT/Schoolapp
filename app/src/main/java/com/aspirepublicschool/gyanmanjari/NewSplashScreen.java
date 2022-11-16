@@ -59,7 +59,7 @@ public class NewSplashScreen extends AppCompatActivity {
         sc_id = sharedPreferences.getString("sc_id","SCIDN1");
 
         Toast.makeText(getApplicationContext(), s_id, Toast.LENGTH_SHORT).show();
-
+//check
         Log.d("111",""+login);
         imgsplash = findViewById(R.id.imgsplash);
 //        txtaspire = findViewById(R.id.txtaspire);
