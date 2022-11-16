@@ -90,6 +90,8 @@ public class AddressDetailStuActivity extends AppCompatActivity {
         saRecidenceVillageArea = sp.getString("saRecidenceVillageArea", String.valueOf(-1));
         saRecidenceCity = sp.getString("saRecidenceCity", String.valueOf(-1));
 
+
+
         if (recidenceAddress == String.valueOf(-1) ||
                 recidenceVillageArea == String.valueOf(-1) ||
                 recidenceCity == String.valueOf(-1) ||

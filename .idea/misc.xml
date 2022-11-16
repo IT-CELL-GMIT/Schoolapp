@@ -80,8 +80,69 @@
         <entry key="..\:/Users/pc/Desktop/schoolapp/app/src/main/res/layout/edudetail.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/pc/Desktop/schoolapp/app/src/main/res/menu/main.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/pc/Desktop/schoolapp/app/src/main/res/menu/main_menu.xml" value="0.20416666666666666" />
+        <entry key="..\:/schoolapp/app/src/main/res/layout/action_bar_notification_icon.xml" value="0.25" />
+        <entry key="..\:/schoolapp/app/src/main/res/layout/activity_about_us.xml" value="0.25" />
+        <entry key="..\:/schoolapp/app/src/main/res/layout/activity_academic_calendar.xml" value="0.25" />
+        <entry key="..\:/schoolapp/app/src/main/res/layout/activity_acdemic_row.xml" value="0.25" />
+        <entry key="..\:/schoolapp/app/src/main/res/layout/activity_address.xml" value="0.25" />
+        <entry key="..\:/schoolapp/app/src/main/res/layout/activity_address2.xml" value="0.25" />
+        <entry key="..\:/schoolapp/app/src/main/res/layout/activity_address_detail_stu.xml" value="0.25" />
+        <entry key="..\:/schoolapp/app/src/main/res/layout/activity_address_update.xml" value="0.25" />
+        <entry key="..\:/schoolapp/app/src/main/res/layout/activity_admission_test_result.xml" value="0.25" />
+        <entry key="..\:/schoolapp/app/src/main/res/layout/activity_adv_row.xml" value="0.25" />
+        <entry key="..\:/schoolapp/app/src/main/res/layout/activity_advertise_row.xml" value="0.25" />
+        <entry key="..\:/schoolapp/app/src/main/res/layout/activity_advertise_shop_banner_row.xml" value="0.25" />
+        <entry key="..\:/schoolapp/app/src/main/res/layout/activity_all_shop_details.xml" value="0.25" />
+        <entry key="..\:/schoolapp/app/src/main/res/layout/activity_announcement.xml" value="0.25" />
+        <entry key="..\:/schoolapp/app/src/main/res/layout/activity_ask_query.xml" value="0.25" />
+        <entry key="..\:/schoolapp/app/src/main/res/layout/activity_assignment_display.xml" value="0.25" />
+        <entry key="..\:/schoolapp/app/src/main/res/layout/activity_assignment_row.xml" value="0.25" />
+        <entry key="..\:/schoolapp/app/src/main/res/layout/activity_attempt_test.xml" value="0.25" />
+        <entry key="..\:/schoolapp/app/src/main/res/layout/activity_attendance.xml" value="0.25" />
+        <entry key="..\:/schoolapp/app/src/main/res/layout/activity_basic_stu_info.xml" value="0.25" />
+        <entry key="..\:/schoolapp/app/src/main/res/layout/activity_biology.xml" value="0.25" />
+        <entry key="..\:/schoolapp/app/src/main/res/layout/activity_cancel_order.xml" value="0.25" />
+        <entry key="..\:/schoolapp/app/src/main/res/layout/activity_cart.xml" value="0.25" />
+        <entry key="..\:/schoolapp/app/src/main/res/layout/activity_cart_row.xml" value="0.25" />
+        <entry key="..\:/schoolapp/app/src/main/res/layout/activity_category_details.xml" value="0.25" />
+        <entry key="..\:/schoolapp/app/src/main/res/layout/activity_category_wise_shop.xml" value="0.25" />
+        <entry key="..\:/schoolapp/app/src/main/res/layout/activity_chat.xml" value="0.25" />
+        <entry key="..\:/schoolapp/app/src/main/res/layout/activity_chat_doubt.xml" value="0.25" />
+        <entry key="..\:/schoolapp/app/src/main/res/layout/activity_check_sum.xml" value="0.25" />
         <entry key="..\:/schoolapp/app/src/main/res/layout/activity_chemistry.xml" value="0.25677083333333334" />
+        <entry key="..\:/schoolapp/app/src/main/res/layout/activity_class_result.xml" value="0.25" />
+        <entry key="..\:/schoolapp/app/src/main/res/layout/activity_create_new_password.xml" value="0.25" />
+        <entry key="..\:/schoolapp/app/src/main/res/layout/activity_daily_time_table.xml" value="0.25" />
+        <entry key="..\:/schoolapp/app/src/main/res/layout/activity_decscribe_doubt.xml" value="0.25" />
+        <entry key="..\:/schoolapp/app/src/main/res/layout/activity_delivery_details.xml" value="0.25" />
+        <entry key="..\:/schoolapp/app/src/main/res/layout/activity_demo.xml" value="0.25" />
+        <entry key="..\:/schoolapp/app/src/main/res/layout/activity_display_video.xml" value="0.25" />
         <entry key="..\:/schoolapp/app/src/main/res/layout/activity_document_upload.xml" value="0.27447916666666666" />
+        <entry key="..\:/schoolapp/app/src/main/res/layout/activity_doubt_row.xml" value="0.25" />
+        <entry key="..\:/schoolapp/app/src/main/res/layout/activity_doubt_solving.xml" value="0.25" />
+        <entry key="..\:/schoolapp/app/src/main/res/layout/activity_doubt_subject.xml" value="0.25" />
+        <entry key="..\:/schoolapp/app/src/main/res/layout/activity_doubt_topics.xml" value="0.25" />
+        <entry key="..\:/schoolapp/app/src/main/res/layout/activity_download_test_key.xml" value="0.25" />
+        <entry key="..\:/schoolapp/app/src/main/res/layout/activity_due_payment.xml" value="0.25" />
+        <entry key="..\:/schoolapp/app/src/main/res/layout/activity_empty.xml" value="0.25" />
+        <entry key="..\:/schoolapp/app/src/main/res/layout/activity_feedback.xml" value="0.25" />
+        <entry key="..\:/schoolapp/app/src/main/res/layout/activity_feedbacks.xml" value="0.25" />
+        <entry key="..\:/schoolapp/app/src/main/res/layout/activity_fees.xml" value="0.25" />
+        <entry key="..\:/schoolapp/app/src/main/res/layout/activity_final_splash_screen.xml" value="0.25" />
+        <entry key="..\:/schoolapp/app/src/main/res/layout/activity_full_pacakge_spa.xml" value="0.25" />
+        <entry key="..\:/schoolapp/app/src/main/res/layout/activity_full_package.xml" value="0.25" />
+        <entry key="..\:/schoolapp/app/src/main/res/layout/activity_gallery.xml" value="0.25" />
+        <entry key="..\:/schoolapp/app/src/main/res/layout/activity_gmap.xml" value="0.25" />
+        <entry key="..\:/schoolapp/app/src/main/res/layout/activity_gmap_location.xml" value="0.25" />
+        <entry key="..\:/schoolapp/app/src/main/res/layout/activity_half_row.xml" value="0.25" />
+        <entry key="..\:/schoolapp/app/src/main/res/layout/activity_help.xml" value="0.25" />
+        <entry key="..\:/schoolapp/app/src/main/res/layout/activity_holiday_events.xml" value="0.25" />
+        <entry key="..\:/schoolapp/app/src/main/res/layout/activity_holiday_row.xml" value="0.25" />
+        <entry key="..\:/schoolapp/app/src/main/res/layout/activity_home_work_assignment.xml" value="0.25" />
+        <entry key="..\:/schoolapp/app/src/main/res/layout/activity_homework.xml" value="0.25" />
+        <entry key="..\:/schoolapp/app/src/main/res/layout/activity_homework_work.xml" value="0.25" />
+        <entry key="..\:/schoolapp/app/src/main/res/layout/activity_image_containears.xml" value="0.25" />
+        <entry key="..\:/schoolapp/app/src/main/res/layout/activity_image_dialog.xml" value="0.25" />
         <entry key="..\:/schoolapp/app/src/main/res/layout/activity_main.xml" value="0.27447916666666666" />
         <entry key="..\:/schoolapp/app/src/main/res/layout/activity_offline_test_result.xml" value="0.25677083333333334" />
         <entry key="..\:/schoolapp/app/src/main/res/layout/activity_profile_main2.xml" value="0.25677083333333334" />
@@ -89,6 +150,18 @@
         <entry key="..\:/schoolapp/app/src/main/res/layout/basic_activity.xml" value="0.27447916666666666" />
         <entry key="..\:/schoolapp/app/src/main/res/layout/edudetail.xml" value="0.27447916666666666" />
         <entry key="..\:/schoolapp/app/src/main/res/layout/fragment_question_fragmnet.xml" value="0.25677083333333334" />
+        <entry key="..\:/schoolapp/app/src/main/res/menu/activity_main_drawer.xml" value="0.25" />
+        <entry key="..\:/schoolapp/app/src/main/res/menu/attachment.xml" value="0.25" />
+        <entry key="..\:/schoolapp/app/src/main/res/menu/cart.xml" value="0.25" />
+        <entry key="..\:/schoolapp/app/src/main/res/menu/main.xml" value="0.25" />
+        <entry key="..\:/schoolapp/app/src/main/res/menu/main_menu.xml" value="0.25" />
+        <entry key="..\:/schoolapp/app/src/main/res/menu/menu_all_shop_details.xml" value="0.25" />
+        <entry key="..\:/schoolapp/app/src/main/res/menu/menu_category_details.xml" value="0.25" />
+        <entry key="..\:/schoolapp/app/src/main/res/menu/menu_shop_details.xml" value="0.25" />
+        <entry key="..\:/schoolapp/app/src/main/res/menu/navigation.xml" value="0.25" />
+        <entry key="..\:/schoolapp/app/src/main/res/menu/profile_menu.xml" value="0.25" />
+        <entry key="..\:/schoolapp/app/src/main/res/menu/refresh.xml" value="0.25" />
+        <entry key="..\:/schoolapp/app/src/main/res/menu/stationery_menu.xml" value="0.25" />
       </map>
     </option>
   </component>
