@@ -3,6 +3,7 @@ package com.aspirepublicschool.gyanmanjari.uniform;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
@@ -25,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         viewUniform.setAdapter(viewPagerAdapter);
         dotscount = viewPagerAdapter.getCount();
         dots = new ImageView[dotscount];
-
+        
         for(int i = 0; i < dotscount; i++){
 
             dots[i] = new ImageView(this);

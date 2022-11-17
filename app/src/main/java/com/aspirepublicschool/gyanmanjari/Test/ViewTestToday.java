@@ -127,7 +127,6 @@ public class ViewTestToday extends AppCompatActivity {
             public void onResponse(String response) {
                 Common.progressDialogDismiss(ViewTestToday.this);
                 Log.d("AAa",response);
-                Toast.makeText(ViewTestToday.this, response, Toast.LENGTH_SHORT).show();
                 testArrayList.clear();
 
                 try {

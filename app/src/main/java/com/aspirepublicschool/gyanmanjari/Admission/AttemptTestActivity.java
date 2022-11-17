@@ -46,12 +46,6 @@ public class AttemptTestActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                SharedPreferences sp = getSharedPreferences("FILE_NAME", MODE_PRIVATE);
-                SharedPreferences.Editor edit = sp.edit();
-
-                edit.putString("Test","Test Attempt");
-                edit.apply();
-
                 startActivity(new Intent(AttemptTestActivity.this, ViewTestToday.class));
                 finish();
             }

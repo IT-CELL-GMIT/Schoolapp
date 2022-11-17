@@ -182,6 +182,7 @@ public class TestActivity extends AppCompatActivity
                                 SharedPreferences sp = getSharedPreferences("MARKSTEST", MODE_PRIVATE);
                                 SharedPreferences.Editor edit = sp.edit();
 
+                                edit.putString("Test","Test Attempt");
                                 edit.putString("TotalMarks", String.valueOf(DynamicFragment.selectedOpAns.size()));
                                 edit.putString("marksMCQ", String.valueOf(marks));
                                 edit.putString("Test_Status", "GIVEN");

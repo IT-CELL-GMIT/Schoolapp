@@ -3,6 +3,7 @@ package com.aspirepublicschool.gyanmanjari;
 import static android.content.ContentValues.TAG;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
@@ -28,6 +29,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -160,6 +162,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         {
             loadStudentData();
         }
+
 //       SendAppVersion();
         //FirebaseInstanceId.getInstance().getToken();
 //        FirebaseMessaging.getInstance().setAutoInitEnabled(true);
@@ -239,21 +242,26 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         TextView username = headerview.findViewById(R.id.txtnameprofile);
         TextView id = headerview.findViewById(R.id.txtemail);
         CircleImageView imgurl = headerview.findViewById(R.id.imgnavprofile);
+        username.setText("Sanjay Parmar");
+        id.setText("sanjayparmar7167@gmail.com");
+        Glide.with(getApplicationContext()).load("https://biochemical-damping.000webhostapp.com/Management%20of%20College/profilepic/Photo%201.jpg").into(imgurl);
+
         try {
             Glide.with(MainActivity.this).load(new URL(image_url)).diskCacheStrategy(DiskCacheStrategy.NONE)
                     .skipMemoryCache(true).into(imgurl);
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
-        username.setText(name1);
-        id.setText(std);
+//        username.setText(name1);
+//        id.setText(std);
         linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 // 31/03/2022
 //                 startActivity(new Intent(MainActivity.this, StudentProfile.class));
-                Intent intent = new Intent(ctx, ProfileMainActivity.class);
+//                Intent intent = new Intent(ctx, ProfileMainActivity.class);
+                Intent intent = new Intent(ctx, update.class);
                 intent.putExtra("number", number);
                 intent.putExtra("stu_id", s_id);
                 intent.putExtra("sc_id", sc_id);
@@ -295,6 +303,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     private void getStatus() {
+
+        String link = "http://www.zocarro.net/zocarro_mobile_app/ws/getTest.php";
 
         String Webserviceurl = Common.GetWebServiceURL() + "getStatus.php";
         Log.d("@@@web", Webserviceurl);
@@ -377,7 +387,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         }, new Response.ErrorListener() {
                             @Override
                             public void onErrorResponse(VolleyError error) {
-                                Toast.makeText(getApplicationContext(), error.toString(), Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext(), error.toString() + "yyyyyy", Toast.LENGTH_SHORT).show();
 
                             }
                         }) {
@@ -573,6 +583,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
                     }
                 } catch (JSONException e) {
+                    Toast.makeText(ctx, "land " + e.toString(), Toast.LENGTH_SHORT).show();
                     e.printStackTrace();
                 }
 

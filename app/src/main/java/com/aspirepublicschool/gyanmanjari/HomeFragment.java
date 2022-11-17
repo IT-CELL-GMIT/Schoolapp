@@ -114,6 +114,12 @@ public class HomeFragment extends Fragment {
         txtView = v.findViewById(R.id.textView);
         txtView.setVisibility(View.INVISIBLE);
 
+        profile_name.setText("Sanjay Parmar");
+        rollno.setText("44");
+        class_id.setText("12th");
+        Glide.with(v.getContext()).load("https://biochemical-damping.000webhostapp.com/Management%20of%20College/profilepic/Photo%201.jpg").into(profile_image);
+
+
         statusGet();
 
         SharedPreferences mPrefs = PreferenceManager.getDefaultSharedPreferences(ctx);
