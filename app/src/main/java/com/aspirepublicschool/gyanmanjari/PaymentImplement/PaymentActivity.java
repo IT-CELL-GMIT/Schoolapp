@@ -14,6 +14,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.aspirepublicschool.gyanmanjari.DocumentUpload.DocumentUploadActivity;
+import com.aspirepublicschool.gyanmanjari.MainActivity;
 import com.aspirepublicschool.gyanmanjari.R;
 import com.razorpay.Checkout;
 import com.razorpay.ExternalWalletListener;
@@ -28,6 +29,7 @@ public class PaymentActivity extends AppCompatActivity implements PaymentResultW
     String API_ID = "rzp_test_0RHVnRvOPZwYaO";  //RazourPay API ID
     private AlertDialog.Builder alertDialogBuilder;
     Button btnPay;
+    SharedPreferences sp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
