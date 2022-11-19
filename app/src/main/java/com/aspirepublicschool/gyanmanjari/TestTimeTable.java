@@ -10,6 +10,7 @@ import androidx.viewpager.widget.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.aspirepublicschool.gyanmanjari.R;
 import com.google.android.material.tabs.TabLayout;
@@ -74,6 +75,10 @@ public class TestTimeTable extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
        View v=inflater.inflate(R.layout.fragment_test_time_table, container, false);
+
+        Toast.makeText(getActivity(), "TestTimeTable", Toast.LENGTH_SHORT).show();
+        ////TestTimeTable.php api needs to be changed
+       
         viewPager =v.findViewById(R.id.test_timetable_viewpager);
         tabLayout = v.findViewById(R.id.test_timetable_tablayout);
         viewPager.setAdapter(new TestTimeTableAdapter(getChildFragmentManager(), tabLayout.getTabCount()));

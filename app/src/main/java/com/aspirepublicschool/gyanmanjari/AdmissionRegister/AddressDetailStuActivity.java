@@ -1,13 +1,18 @@
 package com.aspirepublicschool.gyanmanjari.AdmissionRegister;
 
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.swiperefreshlayout.widget.CircularProgressDrawable;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
+import android.preference.PreferenceManager;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.RadioButton;
@@ -15,15 +20,21 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
+import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
+import com.android.volley.RetryPolicy;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.aspirepublicschool.gyanmanjari.Admission.AttemptTestActivity;
+import com.aspirepublicschool.gyanmanjari.Common;
+import com.aspirepublicschool.gyanmanjari.Login;
+import com.aspirepublicschool.gyanmanjari.Payment.PayTMActivity;
 import com.aspirepublicschool.gyanmanjari.PaymentImplement.PaymentActivity;
 import com.aspirepublicschool.gyanmanjari.R;
+import com.aspirepublicschool.gyanmanjari.Register.RegisterActivity;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -50,6 +61,9 @@ public class AddressDetailStuActivity extends AppCompatActivity {
     String url = "https://biochemical-damping.000webhostapp.com/insert.php", urlId = "https://biochemical-damping.000webhostapp.com/idfetch.php";
 
     ProgressDialog progressDialog;
+
+    private String first_name,last_name,number,address,password,number2,father,emailid;
+    String sc_id, class_id, med, stds, board,groups,district;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -141,10 +155,13 @@ public class AddressDetailStuActivity extends AppCompatActivity {
 
     private void uploadData() {
 
-        StringRequest request = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
+        String insertStudentData = Common.getAdmissionURL() + "insertStudentData.php";
+        StringRequest request = new StringRequest(Request.Method.POST, insertStudentData,
+                new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
 
+                Toast.makeText(AddressDetailStuActivity.this, response, Toast.LENGTH_SHORT).show();
                 progressDialog.dismiss();
 
                 progressDialog.setMessage("Just a little moment...");
@@ -280,11 +297,42 @@ public class AddressDetailStuActivity extends AppCompatActivity {
         edit.putString("saRecidenceCity", saRecidenceCity);
         edit.apply();
 
+        med = Medium;
+        groups = Group;
+
+        if(med.equals("Gujarati"))
+        {
+            if(groups.equals("A Group"))
+            {
+                class_id="CIDN121";
+//                            class_id = "SCIDN1";
+            }
+            else {
+                class_id="CIDN120";
+//                            class_id = "SCIDN1";
+            }
+        }
+        else {
+
+            if(groups.equals("A Group"))
+            {
+                class_id="CIDN123";
+//                            class_id = "SCIDN1";
+            }
+            else {
+                class_id="CIDN122";
+//                            class_id = "SCIDN1";
+            }
+
+        }
+
         uploadData();
 
     }
 
     private void fetchId() {
+
+        String fetchID = Common.getAdmissionURL() + "idfetch.php";
 
         SharedPreferences sp = getSharedPreferences("FILE_NAME", MODE_PRIVATE);
         SharedPreferences.Editor edit = sp.edit();
@@ -296,12 +344,11 @@ public class AddressDetailStuActivity extends AppCompatActivity {
 
 
 
-        StringRequest request = new StringRequest(Request.Method.POST, urlId, new Response.Listener<String>() {
+        StringRequest request = new StringRequest(Request.Method.POST, fetchID, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
 
-
-
+                progressDialog.dismiss();
                 try {
 
                     progressDialog.dismiss();
@@ -320,10 +367,13 @@ public class AddressDetailStuActivity extends AppCompatActivity {
                         edit.putString("mainID", id);
                         edit.apply();
 
-                        startActivity(new Intent(AddressDetailStuActivity.this, AttemptTestActivity.class));
-                        Toast.makeText(AddressDetailStuActivity.this, "data inserted successfully", Toast.LENGTH_SHORT).show();
-                        finish();
+                        progressDialog.setMessage("Finishing...");
+                        progressDialog.setCancelable(false);
+                        progressDialog.show();
 
+                        Toast.makeText(AddressDetailStuActivity.this, "data inserted successfully", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(getApplicationContext(), AttemptTestActivity.class));
+                        finish();
 
                     }
 
@@ -331,7 +381,7 @@ public class AddressDetailStuActivity extends AppCompatActivity {
                 } catch (JSONException e) {
 
                     progressDialog.dismiss();
-                    Toast.makeText(AddressDetailStuActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(AddressDetailStuActivity.this, e.getMessage() , Toast.LENGTH_SHORT).show();
 
                 }
 
@@ -366,4 +416,132 @@ public class AddressDetailStuActivity extends AppCompatActivity {
         requestQueue.add(request);
 
     }
+
+//    private void postClassData() {
+//        String registration = Common.GetWebServiceURL()+"register_student.php";
+//        RequestQueue requestQueue = Volley.newRequestQueue(AddressDetailStuActivity.this);
+//        StringRequest stringRequest = new StringRequest(Request.Method.POST, registration, new Response.Listener<String>() {
+//            @RequiresApi(api = Build.VERSION_CODES.N)
+//            @Override
+//            public void onResponse(String response) {
+//                Toast.makeText(AddressDetailStuActivity.this, "kdkdkddieiid" + response, Toast.LENGTH_SHORT).show();
+//                try {
+//                    JSONObject object = new JSONObject(response);
+//                    String message=object.getString("message");
+//                    if(message.equals("success")) {
+//                        final SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(AddressDetailStuActivity.this);
+//                        SharedPreferences.Editor editor = sharedPreferences.edit();
+//                        editor.putInt("login",1);
+//                        // Snackbar.make(relregister, "Registration Successful.Username and password  will be provided by SMS after approval of admin.", Snackbar.LENGTH_LONG).show();
+//                        //Toast.makeText(ctx, "Registration Successful.Username and password  will be provided by SMS after approval of admin.",Toast.LENGTH_LONG ).show();
+//                        final Toast toast = Toast.makeText(getApplicationContext(), "Registration Successful.Username and password  will be provided by SMS after approval of admin.", Toast.LENGTH_SHORT);
+//                        toast.show();
+//
+//                        Handler handler = new Handler();
+//                        handler.postDelayed(new Runnable() {
+//                            @Override
+//                            public void run() {
+//                                toast.cancel();
+//                            }
+//                        }, 10000);
+//
+//
+////                        Intent intent=new Intent(ctx,Login.class);
+////                        startActivity(intent);
+////                        finish();
+//
+////                        Intent intent=new Intent(ctx, PayTMActivity.class);
+////                        startActivity(intent);
+////                        finish();
+//
+//                        progressDialog.dismiss();
+//                        startActivity(new Intent(AddressDetailStuActivity.this, AttemptTestActivity.class));
+//                        Toast.makeText(AddressDetailStuActivity.this, "data inserted successfully", Toast.LENGTH_SHORT).show();
+//                        finish();
+//
+//                    }
+//                    else if(message.equals("Data Already Exist"))
+//                    {
+//                        final Toast toast = Toast.makeText(getApplicationContext(), "Data Already Exist", Toast.LENGTH_SHORT);
+//                        toast.show();
+//
+//                        Handler handler = new Handler();
+//                        handler.postDelayed(new Runnable() {
+//                            @Override
+//                            public void run() {
+//                                toast.cancel();
+//                            }
+//                        }, 10000);
+//                        progressDialog.dismiss();
+//                        Intent intent=new Intent(getApplicationContext(), AttemptTestActivity.class);
+//                        startActivity(intent);
+//                        finish();
+//
+//                    }
+//                    else
+//                    {
+//                        progressDialog.dismiss();
+//                        final Toast toast = Toast.makeText(getApplicationContext(), "Error", Toast.LENGTH_SHORT);
+//                        toast.show();
+//
+//                        Handler handler = new Handler();
+//                        handler.postDelayed(new Runnable() {
+//                            @Override
+//                            public void run() {
+//                                toast.cancel();
+//                            }
+//                        }, 10000);
+//
+//
+//                    }
+//
+//
+//
+//                } catch (JSONException e) {
+//                    e.printStackTrace();
+//                    progressDialog.dismiss();
+//                    Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
+//                }
+//            }
+//        }, new Response.ErrorListener() {
+//            @Override
+//            public void onErrorResponse(VolleyError error) {
+//                progressDialog.dismiss();
+//                error.printStackTrace();
+//
+//                Toast.makeText(getApplicationContext(),R.string.no_connection_toast, Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getApplicationContext(),error.getMessage(), Toast.LENGTH_SHORT).show();
+//            }
+//        }) {
+//            @Override
+//            protected Map<String, String> getParams() throws AuthFailureError {
+//                Map<String, String> data = new HashMap<>();
+//
+//
+//                data.put("cid", class_id);
+//                data.put("st_sname",name);
+//                data.put("st_fname",surname);
+//                data.put("mobile_no",mobileNo);
+//                data.put("address",recidenceAddress);
+//                data.put("district",recidenceCity);
+//                data.put("f_name",fatherName);
+//                data.put("email","temp@SanjayParmar.king");
+//
+//
+//                data.put("med",med);
+//                data.put("std","12-Science");
+//                data.put("board","GSEB");
+//                data.put("group",groups);
+//                data.put("p_scname",schoolName);
+//                Log.d("###", data.toString());
+//                return data;
+//            }
+//        };
+//        int socketTimeout = 30000;
+//        RetryPolicy policy = new DefaultRetryPolicy(socketTimeout, DefaultRetryPolicy.DEFAULT_MAX_RETRIES, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT);
+//        stringRequest.setRetryPolicy(policy);
+//        requestQueue.add(stringRequest);
+//    }
+
+
 }

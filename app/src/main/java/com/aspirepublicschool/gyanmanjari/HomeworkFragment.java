@@ -16,6 +16,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -102,10 +103,15 @@ public class HomeworkFragment extends Fragment {
         return v;
     }
     private void loadAssignment() {
+        Toast.makeText(ctx, "loadingAssignment in HomeworkFragment", Toast.LENGTH_SHORT).show();
         Common.progressDialogShow(ctx);
         SharedPreferences mPrefs = PreferenceManager.getDefaultSharedPreferences(ctx);
         final String class_id = mPrefs.getString("class_id","none");
         final String sc_id = mPrefs.getString("sc_id","none");
+
+        String finalScId = "SCIDN20";
+        String finalClassId = "CIDN108";    ////this need to be chaged ////no need to change to api
+
         String HOMEWORK_URL = Common.GetWebServiceURL()+"homework.php";
 
         Log.v("LINK",HOMEWORK_URL);
@@ -147,8 +153,8 @@ public class HomeworkFragment extends Fragment {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String,String> params = new HashMap<>();
-                params.put("sc_id",sc_id.toUpperCase());
-                params.put("cid",class_id);
+                params.put("sc_id",finalScId.toUpperCase());
+                params.put("cid",finalClassId);
 
                 return params;
             }

@@ -8,6 +8,7 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.preference.PreferenceManager;
@@ -120,7 +121,7 @@ public class HomeFragment extends Fragment {
         Glide.with(v.getContext()).load("https://biochemical-damping.000webhostapp.com/Management%20of%20College/profilepic/Photo%201.jpg").into(profile_image);
 
 
-        statusGet();
+//        statusGet();
 
         SharedPreferences mPrefs = PreferenceManager.getDefaultSharedPreferences(ctx);
         sc_id= mPrefs.getString("sc_id", "none").toUpperCase();
@@ -130,7 +131,7 @@ public class HomeFragment extends Fragment {
 
 
 
-        feedbackStatus();
+//        feedbackStatus();
 
         lstMainpagedesign = new ArrayList<>();
         lstMainpagedesign.add(new Mainpage_design("Notice", R.drawable.notice));
@@ -148,6 +149,9 @@ public class HomeFragment extends Fragment {
         lstMainpagedesign.add(new Mainpage_design("WRT Result", R.drawable.ic_exam));
         lstMainpagedesign.add(new Mainpage_design("Offline Test Result Display", R.drawable.ic_exam));
 
+        RecyclerViewAdapter_Main adapter1 = new RecyclerViewAdapter_Main(ctx, lstMainpagedesign);
+        recadv1.setLayoutManager(new GridLayoutManager(ctx, 2));
+        recadv1.setAdapter(adapter1);
 
         //lstMainpagedesign.add(new Mainpage_design("Feedback", R.drawable.ic_feedback));
         /*lstMainpagedesign.add(new Mainpage_design("St.Package", R.drawable.ic_package));*/
@@ -155,16 +159,16 @@ public class HomeFragment extends Fragment {
 
 
 
-        /*Advertisement advertisement1 = new Advertisement("1", R.drawable.ads1);
-        advertisementlist.add(advertisement1);
-        Advertisement advertisement = new Advertisement("2", R.drawable.ads2);
-        advertisementlist.add(advertisement);
-        AdvertisementAdapter adapter = new AdvertisementAdapter(ctx, advertisementlist);
-        LinearLayoutManager horizontalLayoutManagaer1
-                = new LinearLayoutManager(ctx, LinearLayoutManager.HORIZONTAL, false);
-        recadv2.setLayoutManager(horizontalLayoutManagaer1);
-        recadv2.setAdapter(adapter);*/
-        loadStudentData();
+//        Advertisement advertisement1 = new Advertisement("1", R.drawable.ads1);
+//        advertisementlist.add(advertisement1);
+//        Advertisement advertisement = new Advertisement("2", R.drawable.ads2);
+//        advertisementlist.add(advertisement);
+//        AdvertisementAdapter adapter = new AdvertisementAdapter(ctx, advertisementlist);
+//        LinearLayoutManager horizontalLayoutManagaer1
+//                = new LinearLayoutManager(ctx, LinearLayoutManager.HORIZONTAL, false);
+//        recadv2.setLayoutManager(horizontalLayoutManagaer1);
+//        recadv2.setAdapter(adapter);
+//        loadStudentData();
         /*loadClassresult();
 
         //loadTodayMenu();

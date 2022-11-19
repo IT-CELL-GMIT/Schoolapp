@@ -10,6 +10,7 @@ import androidx.viewpager.widget.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.aspirepublicschool.gyanmanjari.R;
 import com.google.android.material.tabs.TabLayout;
@@ -78,6 +79,10 @@ public class ClassTimeTable extends Fragment {
         timetable_viewpager =v.findViewById(R.id.timetable_viewpager);
         timetable_tablayout =v.findViewById(R.id.timetable_tablayout);
         ctx=getActivity();
+
+        Toast.makeText(ctx, "ClassTimeTable", Toast.LENGTH_SHORT).show();
+        ////displayTimeTable.php api need to be changed
+
         timetable_viewpager.setAdapter(new TimetableAdapter(getChildFragmentManager(), timetable_tablayout.getTabCount()));
         timetable_viewpager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(timetable_tablayout));
         timetable_tablayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {

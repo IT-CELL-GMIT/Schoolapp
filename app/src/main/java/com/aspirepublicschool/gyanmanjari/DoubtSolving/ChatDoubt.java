@@ -50,6 +50,9 @@ public class ChatDoubt extends AppCompatActivity {
     }
 
     private void SendRequest() {
+
+        Toast.makeText(this, "SendRequest in ChatDoubt", Toast.LENGTH_SHORT).show();
+        
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
         final String sc_id = preferences.getString("sc_id","none").toLowerCase();
         final String class_id = preferences.getString("class_id","none");
