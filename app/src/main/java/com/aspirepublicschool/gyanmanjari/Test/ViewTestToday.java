@@ -48,10 +48,10 @@ public class ViewTestToday extends AppCompatActivity {
         SharedPreferences sp = getSharedPreferences("MARKSTEST", MODE_PRIVATE);
         String testStatus = sp.getString("Test_Status", null);
 
-//        if (testStatus != null){
-//            startActivity(new Intent(this, AdmissionTestResultActivity.class));
-//            finish();
-//        }
+        if (testStatus != null){
+            startActivity(new Intent(this, MainActivity.class));
+            finish();
+        }
 
        /* LocationManager locMan = (LocationManager) ViewTestToday.this.getSystemService(this.LOCATION_SERVICE);
         if (checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && checkSelfPermission(Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {

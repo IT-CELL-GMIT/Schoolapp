@@ -10,6 +10,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.aspirepublicschool.gyanmanjari.DocumentUpload.DocumentUploadActivity;
+import com.aspirepublicschool.gyanmanjari.MainActivity;
 import com.aspirepublicschool.gyanmanjari.PaymentImplement.PaymentActivity;
 import com.aspirepublicschool.gyanmanjari.R;
 import com.aspirepublicschool.gyanmanjari.Test.ViewTestToday;
@@ -38,7 +39,8 @@ public class AttemptTestActivity extends AppCompatActivity {
         testStatus = sp.getString("Test", null);
 
         if (testStatus!=null){
-            startActivity(new Intent(AttemptTestActivity.this, ViewTestToday.class));
+//            startActivity(new Intent(AttemptTestActivity.this, ViewTestToday.class));
+            startActivity(new Intent(AttemptTestActivity.this, PaymentActivity.class));
             finish();
         }
 
@@ -46,6 +48,9 @@ public class AttemptTestActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                SharedPreferences.Editor editor = sp.edit();
+                editor.putString("Test", "Given");
+                editor.apply();
                 startActivity(new Intent(AttemptTestActivity.this, ViewTestToday.class));
                 finish();
             }

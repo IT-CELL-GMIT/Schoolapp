@@ -13,6 +13,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.os.Handler;
 import android.preference.PreferenceManager;
 import android.util.Log;
 import android.widget.TextView;
@@ -137,6 +138,9 @@ public class StaffDetails extends AppCompatActivity {
 
     private void SendRequest() {
 
+        Toast.makeText(ctx, "sendRequest in StaffDetails", Toast.LENGTH_SHORT).show();
+        ////need to watch out api
+
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(ctx);
         final String class_id = preferences.getString("class_id", "none");
         final String sc_id = preferences.getString("sc_id", "none").toUpperCase();
@@ -145,13 +149,23 @@ public class StaffDetails extends AppCompatActivity {
         StringRequest request = new StringRequest(StringRequest.Method.POST, Webserviceurl, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
+                Toast.makeText(ctx, response, Toast.LENGTH_SHORT).show();
 
-                try {
-                    Common.progressDialogDismiss(StaffDetails.this);
-                    JSONArray array = new JSONArray(response);
-                    staffList.clear();
-                    for (int i = 0; i < array.length(); i++) {
-                        JSONObject result = array.getJSONObject(i);
+                if (response.contains("Table 'zocaryzg_testing.scidn1_teacher_data' doesn't exist")) {
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            finish();
+                        }
+                    }, 3000);
+                } else {
+
+                    try {
+                        Common.progressDialogDismiss(StaffDetails.this);
+                        JSONArray array = new JSONArray(response);
+                        staffList.clear();
+                        for (int i = 0; i < array.length(); i++) {
+                            JSONObject result = array.getJSONObject(i);
                        /* {
                             "lecture": "Hindi",
                                 "t_lname": "Patel",
@@ -160,23 +174,24 @@ public class StaffDetails extends AppCompatActivity {
                         },
 */
 
-                        staffList.add(new Staff(
-                                result.getString("t_fname"),
-                                result.getString("t_lname"),
-                                result.getString("subject"),
-                                result.getString("t_img"),
-                                result.getString("t_cno")
+                            staffList.add(new Staff(
+                                    result.getString("t_fname"),
+                                    result.getString("t_lname"),
+                                    result.getString("subject"),
+                                    result.getString("t_img"),
+                                    result.getString("t_cno")
 
-                        ));
+                            ));
+                        }
+                        StaffAdapter adapter = new StaffAdapter(ctx, staffList);
+                        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(ctx);
+                        recteacherdetils.setLayoutManager(mLayoutManager);
+                        recteacherdetils.setItemAnimator(new DefaultItemAnimator());
+                        recteacherdetils.setAdapter(adapter);
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                        Toast.makeText(getApplicationContext(), R.string.no_connection_toast, Toast.LENGTH_SHORT).show();
                     }
-                    StaffAdapter adapter = new StaffAdapter(ctx, staffList);
-                    RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(ctx);
-                    recteacherdetils.setLayoutManager(mLayoutManager);
-                    recteacherdetils.setItemAnimator(new DefaultItemAnimator());
-                    recteacherdetils.setAdapter(adapter);
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                    Toast.makeText(getApplicationContext(), R.string.no_connection_toast, Toast.LENGTH_SHORT).show();
                 }
             }
         }, new Response.ErrorListener() {

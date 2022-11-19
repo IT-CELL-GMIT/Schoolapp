@@ -349,6 +349,7 @@ public class RegisterActivity extends AppCompatActivity {
             @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
             public void onResponse(String response) {
+                Toast.makeText(RegisterActivity.this, response, Toast.LENGTH_SHORT).show();
                 try {
                     Common.progressDialogDismiss(RegisterActivity.this);
                     JSONObject object = new JSONObject(response);

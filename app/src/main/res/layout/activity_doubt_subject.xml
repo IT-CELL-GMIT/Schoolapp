@@ -41,16 +41,18 @@
         android:textStyle="bold" />
 
     <Spinner
+        android:id="@+id/spnsub"
         android:layout_width="match_parent"
         android:layout_height="45dp"
-        android:layout_marginTop="2dp"
-        android:id="@+id/spnsub"
-        android:layout_margin="3dp"
-        android:textSize="16sp"
-        android:padding="10dp"
-        android:fontFamily="@font/metropolis"
+        android:layout_below="@+id/txtsub"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="3dp"
+        android:layout_marginBottom="3dp"
         android:background="@drawable/edittext_shape"
-        android:layout_below="@+id/txtsub"/>
+        android:fontFamily="@font/metropolis"
+        android:padding="10dp"
+        android:textSize="16sp" />
 
     <Button
         android:id="@+id/btnsubmit"

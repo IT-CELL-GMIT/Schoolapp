@@ -46,6 +46,9 @@ public class Common {
     public static String GetWebServiceURL(){
         return GetBaseURL() + "ws/";
     }
+    public static String getAdmissionURL(){
+        return GetWebServiceURL() + "AdmissionApi/";
+    }
     public static String GetTimeoutMessage()
     {
         return  "Attention!, your server is not responding. check following things and retry" +

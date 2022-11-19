@@ -47,7 +47,9 @@
 
         <activity
             android:name=".DocumentUpload.DocumentUploadActivity"
-            android:exported="true"></activity>
+            android:exported="true">
+
+        </activity>
         <activity
             android:name=".AdmissionDetailRegister.update"
             android:exported="true">
@@ -186,6 +188,7 @@
             android:name=".MainActivity"
             android:exported="true"
             android:theme="@style/AppTheme.NoActionBar">
+
 
             <!-- apani main screen -->
 

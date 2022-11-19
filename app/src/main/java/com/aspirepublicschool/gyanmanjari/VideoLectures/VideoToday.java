@@ -109,6 +109,7 @@ public class VideoToday extends Fragment {
         }
         else
         {
+            Toast.makeText(ctx, "loadAssignment", Toast.LENGTH_SHORT).show();
             Log.d("Set", "False");
             loadAssignment();
 
@@ -124,6 +125,10 @@ public class VideoToday extends Fragment {
         SharedPreferences mPrefs = PreferenceManager.getDefaultSharedPreferences(ctx);
         final String class_id = mPrefs.getString("class_id","none");
         final String sc_id = mPrefs.getString("sc_id","none");
+
+        String finalClasId = "CIDN108";
+        String finalSCId = "SCIDN20"; ////---->need this to be changed ////api alos need to be changed
+
         String HOMEWORK_URL = Common.GetWebServiceURL()+"videolectures.php";
         //String HOMEWORK_URL = "http://www.zocarro.net/zocarro_mobile_app/ws/videolectures.php";
 
@@ -131,6 +136,7 @@ public class VideoToday extends Fragment {
         StringRequest stringRequest = new StringRequest(Request.Method.POST, HOMEWORK_URL, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
+
                 try {
                     Common.progressDialogDismiss(ctx);
                     Log.d("@@@",response );
@@ -175,8 +181,8 @@ public class VideoToday extends Fragment {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String,String> params = new HashMap<>();
-                params.put("sc_id",sc_id.toUpperCase());
-                params.put("cid",class_id);
+                params.put("sc_id",finalSCId.toUpperCase());
+                params.put("cid",finalClasId);
                 Log.d("##",params.toString());
 
                 return params;

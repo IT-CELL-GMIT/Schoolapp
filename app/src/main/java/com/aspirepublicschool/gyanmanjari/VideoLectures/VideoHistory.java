@@ -108,6 +108,9 @@ public class VideoHistory extends Fragment {
         final String sc_id = mPrefs.getString("sc_id","none");
         String HOMEWORK_URL = Common.GetWebServiceURL()+"videohistory.php";
 
+        String finalClasId = "CIDN108";
+        String finalSCId = "SCIDN20";  ////---->need this to be changed ////api alos need to be changed
+
         Log.v("LINK",HOMEWORK_URL);
         StringRequest stringRequest = new StringRequest(Request.Method.POST, HOMEWORK_URL, new Response.Listener<String>() {
             @Override
@@ -152,8 +155,8 @@ public class VideoHistory extends Fragment {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String,String> params = new HashMap<>();
-                params.put("sc_id",sc_id.toUpperCase());
-                params.put("cid",class_id);
+                params.put("sc_id",finalSCId.toUpperCase());
+                params.put("cid",finalClasId);
                 Log.d("##",params.toString());
 
                 return params;

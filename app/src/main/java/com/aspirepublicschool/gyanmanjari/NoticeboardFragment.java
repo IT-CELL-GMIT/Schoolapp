@@ -19,6 +19,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -106,12 +107,17 @@ public class NoticeboardFragment extends Fragment {
        return v;
     }
     private void loadNoticeboard() {
+        Toast.makeText(ctx, "loading notice", Toast.LENGTH_SHORT).show();
         Common.progressDialogShow(ctx);
         SharedPreferences mPrefs = PreferenceManager.getDefaultSharedPreferences(ctx);
-        final String sc_id = mPrefs.getString("sc_id","none").toUpperCase();
+        String sc_id = mPrefs.getString("sc_id","none").toUpperCase();
+
+            sc_id = "SCIDN20"; //need to be removed this in future
+
         Log.v("VVVV",sc_id);
         String URL_NOTICEBOARD = Common.GetWebServiceURL()+"notice.php" ;
        // String URL_NOTICEBOARD = +"noticeboard.php" ;
+        String finalSc_id = sc_id;
         StringRequest stringRequest = new StringRequest(Request.Method.POST,URL_NOTICEBOARD, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
@@ -169,7 +175,7 @@ public class NoticeboardFragment extends Fragment {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String,String> params = new HashMap<>();
-                params.put("sc_id",sc_id.toUpperCase());
+                params.put("sc_id", finalSc_id.toUpperCase());
                 Log.d("AAA",params.toString());
                 return params;
             }

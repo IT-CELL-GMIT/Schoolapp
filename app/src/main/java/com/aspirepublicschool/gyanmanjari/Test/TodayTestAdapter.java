@@ -28,6 +28,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.aspirepublicschool.gyanmanjari.Common;
+import com.aspirepublicschool.gyanmanjari.MainActivity;
 import com.aspirepublicschool.gyanmanjari.R;
 
 import org.json.JSONArray;
@@ -250,6 +251,10 @@ public class TodayTestAdapter extends RecyclerView.Adapter {
                     {
                         Common.progressDialogDismiss(ctx);
                         Toast.makeText(ctx,"Sorry!!,Test is already submitted!!",Toast.LENGTH_LONG).show();
+
+                        Toast.makeText(ctx, "checkTestGiven in TodayTestAdapter", Toast.LENGTH_SHORT).show();
+                        ctx.startActivity(new Intent(ctx, MainActivity.class));///need this to be removed
+
                     }
                     else {
                         try {

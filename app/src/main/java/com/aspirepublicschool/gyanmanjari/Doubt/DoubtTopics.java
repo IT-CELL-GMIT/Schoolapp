@@ -37,6 +37,7 @@ public class DoubtTopics extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_doubt_topics);
         subject=getIntent().getExtras().getString("sub");
+        Toast.makeText(this, "doubt of " + subject + "in DoubtTopics", Toast.LENGTH_SHORT).show();
         allocatememory();
         SendRequest();
     }
@@ -46,6 +47,10 @@ public class DoubtTopics extends AppCompatActivity {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
         final String sc_id = preferences.getString("sc_id","none").toLowerCase();
         final String class_id = preferences.getString("class_id","none");
+
+        String finalClassId = "CIDN108";
+        String finalSubject = "Chemistry";   ///need this to be changed ////checkout api
+
         String WebServiceUrl= Common.GetWebServiceURL()+"doubtSubject.php";
         Log.d("subject",WebServiceUrl);
         StringRequest request=new StringRequest(StringRequest.Method.POST, WebServiceUrl, new com.android.volley.Response.Listener<String>() {
@@ -87,8 +92,8 @@ public class DoubtTopics extends AppCompatActivity {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String,String> data=new HashMap<>();
-                data.put("cid",class_id);
-                data.put("sub",subject);
+                data.put("cid",finalClassId);
+                data.put("sub",finalSubject);
                 data.put("sc_id",sc_id);
                 Log.d("!!!", data.toString());
                 return data;

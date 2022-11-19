@@ -112,9 +112,13 @@ public class PublicEvent extends Fragment {
     private void loadAnnouncement() {
         //Common.progressDialogShow(ctx);
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(ctx);
-        final String sc_id = preferences.getString("sc_id","none").toUpperCase();
+        String sc_id = preferences.getString("sc_id","none").toUpperCase();
+
+        sc_id = "SCIDN20"; //need this to be changed in future
+
         String URL_ANNOUNCEMENT = Common.GetWebServiceURL()+"announcement.php" ;
         // Log.v("announcement",URL_ANNOUNCEMENT);
+        String finalSc_id = sc_id;
         StringRequest stringRequest = new StringRequest(Request.Method.POST,URL_ANNOUNCEMENT, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
@@ -170,7 +174,7 @@ public class PublicEvent extends Fragment {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String,String> params = new HashMap<>();
-                params.put("sc_id",sc_id.toUpperCase());
+                params.put("sc_id", finalSc_id.toUpperCase());
                 return params;
             }
         };

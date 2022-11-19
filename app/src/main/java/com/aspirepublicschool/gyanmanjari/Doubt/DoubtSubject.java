@@ -74,6 +74,9 @@ public class DoubtSubject extends AppCompatActivity {
         }
     }
     private void SetSpinnerSubject() {
+
+        Toast.makeText(this, "SetSpinnerSubject in DoubtSubject", Toast.LENGTH_SHORT).show();
+        
         Common.progressDialogShow(DoubtSubject.this);
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
         final String sc_id = preferences.getString("sc_id","none").toLowerCase();
