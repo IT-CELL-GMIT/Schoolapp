@@ -92,6 +92,7 @@ public class PaymentActivity extends AppCompatActivity implements PaymentResultW
         } catch (Exception e) {
             Toast.makeText(activity, "Error in payment: " + e.getMessage(), Toast.LENGTH_SHORT)
                     .show();
+            finish();
             e.printStackTrace();
         }
 
@@ -169,8 +170,10 @@ public class PaymentActivity extends AppCompatActivity implements PaymentResultW
         try{
             alertDialogBuilder.setMessage("Payment Failed:\nPayment Data: "+paymentData.getData());
             alertDialogBuilder.show();
+            finish();
         }catch (Exception e){
             e.printStackTrace();
+            finish();
         }
     }
 

@@ -39,8 +39,8 @@ public class AttemptTestActivity extends AppCompatActivity {
         testStatus = sp.getString("Test", null);
 
         if (testStatus!=null){
-//            startActivity(new Intent(AttemptTestActivity.this, ViewTestToday.class));
-            startActivity(new Intent(AttemptTestActivity.this, PaymentActivity.class));
+            startActivity(new Intent(AttemptTestActivity.this, ViewTestToday.class));
+       //     startActivity(new Intent(AttemptTestActivity.this, PaymentActivity.class));
             finish();
         }
 

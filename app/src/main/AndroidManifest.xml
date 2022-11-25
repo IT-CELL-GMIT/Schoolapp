@@ -38,22 +38,31 @@
         android:roundIcon="@drawable/gmitlogo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        android:usesCleartextTraffic="true">
+        android:usesCleartextTraffic="true"
+        tools:targetApi="m">
+        <activity
+            android:name=".AdmissionRegister.SchoolSelelctActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".AdmissionRegister.PasswordActivity"
+            android:exported="true">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
         <activity
             android:name=".PaymentImplement.PaymentActivity"
-            android:exported="true" >
-
-        </activity>
-
+            android:exported="true"></activity>
         <activity
             android:name=".DocumentUpload.DocumentUploadActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".AdmissionDetailRegister.update"
-            android:exported="true">
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".AdmissionRegister.StuEduDetailActivity"
             android:exported="false" />
@@ -63,19 +72,15 @@
         <activity
             android:name=".AdmissionRegister.BasicStuInfoActivity"
             android:exported="true">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
         <activity
             android:name=".Admission.NewAdmissionLoginActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".Admission.AttemptTestActivity"
             android:exported="true" />
@@ -96,7 +101,8 @@
             android:exported="false" />
         <activity
             android:name=".NotificationActivity"
-            android:exported="false" /> <!-- <activity -->
+            android:exported="false"
+            tools:ignore="Instantiatable" /> <!-- <activity -->
         <!-- android:name=".notification" -->
         <!-- android:exported="false" /> -->
         <activity
@@ -188,7 +194,6 @@
             android:name=".MainActivity"
             android:exported="true"
             android:theme="@style/AppTheme.NoActionBar">
-
 
             <!-- apani main screen -->
 
@@ -322,8 +327,7 @@
         <activity
             android:name=".Test.TestActivity"
             android:label="Test"
-            android:screenOrientation="portrait" >
-        </activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Test.TestWeb"
             android:label="Test"
@@ -357,8 +361,7 @@
         <activity
             android:name=".Test.ViewTestToday"
             android:label="Test/Key"
-            android:parentActivityName=".MainActivity" >
-        </activity>
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".Homework.InsertHomeWork"
             android:label="Submit Homework"
@@ -503,10 +506,7 @@
         <activity
             android:name=".uniform.MainActivity"
             android:label="Uniform"
-            android:parentActivityName=".uniform.SelectShopTypes" >
-
-
-        </activity>
+            android:parentActivityName=".uniform.SelectShopTypes" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").

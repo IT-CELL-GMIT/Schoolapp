@@ -52,7 +52,7 @@ public class AddressDetailStuActivity extends AppCompatActivity {
     String recidenceAddress, recidenceVillageArea, recidenceCity;
     String saRecidenceAddress, saRecidenceVillageArea, saRecidenceCity;
 
-    String schoolName, Medium, Group, mathsMarks, scienceMarks, totalMarks;
+    String schoolName, Medium, Group, mathsMarks, scienceMarks, totalMarks, standard, class_id;
     RadioButton radioButton1, radioButton2;
 
     String surname, name, fatherName, mobileNo, alternateMN;
@@ -61,9 +61,6 @@ public class AddressDetailStuActivity extends AppCompatActivity {
     String url = "https://biochemical-damping.000webhostapp.com/insert.php", urlId = "https://biochemical-damping.000webhostapp.com/idfetch.php";
 
     ProgressDialog progressDialog;
-
-    private String first_name,last_name,number,address,password,number2,father,emailid;
-    String sc_id, class_id, med, stds, board,groups,district;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -90,6 +87,8 @@ public class AddressDetailStuActivity extends AppCompatActivity {
         mathsMarks = sp.getString("mathsMarks", String.valueOf(-1));
         scienceMarks = sp.getString("scienceMarks", String.valueOf(-1));
         totalMarks = sp.getString("totalMarks", String.valueOf(-1));
+        standard = sp.getString("standard", String.valueOf(-1));
+        class_id = sp.getString("class_id", String.valueOf(-1));
 
         surname = sp.getString("surname", String.valueOf(-1));
         name = sp.getString("name", String.valueOf(-1));
@@ -136,7 +135,7 @@ public class AddressDetailStuActivity extends AppCompatActivity {
 
             } else {
 
-                startActivity(new Intent(AddressDetailStuActivity.this, AttemptTestActivity.class));
+                startActivity(new Intent(AddressDetailStuActivity.this, SchoolSelelctActivity.class));
                 finish();
 
             }
@@ -164,9 +163,13 @@ public class AddressDetailStuActivity extends AppCompatActivity {
                 Toast.makeText(AddressDetailStuActivity.this, response, Toast.LENGTH_SHORT).show();
                 progressDialog.dismiss();
 
-                progressDialog.setMessage("Just a little moment...");
-                progressDialog.show();
-                fetchId();
+                if (response.equalsIgnoreCase("data inserted") || response.contains("data inserted")){
+                    progressDialog.setMessage("Just a little moment...");
+                    progressDialog.show();
+                    fetchId();
+                }
+
+
 
             }
         }, new Response.ErrorListener() {
@@ -205,6 +208,9 @@ public class AddressDetailStuActivity extends AppCompatActivity {
                 params.put("saRecidenceAddress", saRecidenceAddress);
                 params.put("saRecidenceVillageArea", saRecidenceVillageArea);
                 params.put("saRecidenceCity", saRecidenceCity);
+
+                params.put("class_Id", class_id);
+                params.put("standard", standard);
 
                 return params;
 
@@ -297,35 +303,6 @@ public class AddressDetailStuActivity extends AppCompatActivity {
         edit.putString("saRecidenceCity", saRecidenceCity);
         edit.apply();
 
-        med = Medium;
-        groups = Group;
-
-        if(med.equals("Gujarati"))
-        {
-            if(groups.equals("A Group"))
-            {
-                class_id="CIDN121";
-//                            class_id = "SCIDN1";
-            }
-            else {
-                class_id="CIDN120";
-//                            class_id = "SCIDN1";
-            }
-        }
-        else {
-
-            if(groups.equals("A Group"))
-            {
-                class_id="CIDN123";
-//                            class_id = "SCIDN1";
-            }
-            else {
-                class_id="CIDN122";
-//                            class_id = "SCIDN1";
-            }
-
-        }
-
         uploadData();
 
     }
@@ -372,7 +349,7 @@ public class AddressDetailStuActivity extends AppCompatActivity {
                         progressDialog.show();
 
                         Toast.makeText(AddressDetailStuActivity.this, "data inserted successfully", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(getApplicationContext(), AttemptTestActivity.class));
+                        startActivity(new Intent(getApplicationContext(), SchoolSelelctActivity.class));
                         finish();
 
                     }

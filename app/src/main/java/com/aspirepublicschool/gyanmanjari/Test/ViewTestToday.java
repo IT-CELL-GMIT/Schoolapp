@@ -49,7 +49,7 @@ public class ViewTestToday extends AppCompatActivity {
         String testStatus = sp.getString("Test_Status", null);
 
         if (testStatus != null){
-            startActivity(new Intent(this, MainActivity.class));
+            startActivity(new Intent(this, AdmissionTestResultActivity.class));
             finish();
         }
 

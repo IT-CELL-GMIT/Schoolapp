@@ -2,6 +2,7 @@ package com.aspirepublicschool.gyanmanjari.AdmissionRegister;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -22,10 +23,11 @@ public class StuEduDetailActivity extends AppCompatActivity {
 
     TextView btnEduSave;
 
-    String schoolName, Medium, Group, mathsMarks, scienceMarks, totalMarks;
-    RadioButton radioButton1, radioButton2;
+    String schoolName, Medium, Group, mathsMarks, scienceMarks, totalMarks, standard, class_id;
+    RadioButton radioButton1, radioButton2, radioButtonStd;
     RadioGroup radioGroup1;
     RadioGroup radioGroup2;
+    RadioGroup radioGroupStd;
 
     String surname, name, fatherName, mobileNo, alternateMN;
     String gender;
@@ -55,6 +57,7 @@ public class StuEduDetailActivity extends AppCompatActivity {
 //        });
 //    }
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,6 +71,7 @@ public class StuEduDetailActivity extends AppCompatActivity {
 
         radioGroup1 = findViewById(R.id.rgMedium);
         radioGroup2 = findViewById(R.id.rgGroup);
+        radioGroupStd = findViewById(R.id.rgsTD);
 
         btnNext = findViewById(R.id.btnEduSave);
         totalOfMarks  = findViewById(R.id.totalOfMarks_stu);
@@ -287,6 +291,7 @@ public class StuEduDetailActivity extends AppCompatActivity {
 
         int ID1 = radioGroup1.getCheckedRadioButtonId();
         int ID2 = radioGroup2.getCheckedRadioButtonId();
+        int IDStd = radioGroupStd.getCheckedRadioButtonId();
 
         schoolName = edSchoolName.getText().toString();
 //        mathsMarks = edMathsMarks.getText().toString();
@@ -299,7 +304,7 @@ public class StuEduDetailActivity extends AppCompatActivity {
 
             Toast.makeText(this, "Please fill up every detail first", Toast.LENGTH_SHORT).show();
 
-        }else if (findViewById(ID1) == null || findViewById(ID2) == null){
+        }else if (findViewById(ID1) == null || findViewById(ID2) == null || findViewById(IDStd) == null){
 
             Toast.makeText(this, "Please check all radio buttons", Toast.LENGTH_SHORT).show();
 
@@ -314,6 +319,69 @@ public class StuEduDetailActivity extends AppCompatActivity {
 
             radioButton2 = findViewById(ID2);
             Group = radioButton2.getText().toString();
+
+            radioButtonStd = findViewById(IDStd);
+            standard = radioButtonStd.getText().toString();
+
+            if(standard.equals("11-Science"))
+            {
+                if(Medium.equals("Gujarati"))
+                {
+                    if(Group.equals("A Group"))
+                    {
+                        class_id="CIDN126";
+//                            class_id = "SCIDN1";
+                    }
+                    else {
+                        class_id="CIDN127";
+//                            class_id = "SCIDN1";
+                    }
+                }
+                else {
+
+                    if(Group.equals("A Group"))
+                    {
+                        class_id="CIDN124";
+//                            class_id = "SCIDN1";
+
+                    }
+                    else {
+                        class_id="CIDN125";
+//                            class_id = "SCIDN1";
+                    }
+
+                }
+            }
+            else
+            {
+                if(Medium.equals("Gujarati"))
+                {
+                    if(Group.equals("A Group"))
+                    {
+                        class_id="CIDN121";
+//                            class_id = "SCIDN1";
+                    }
+                    else {
+                        class_id="CIDN120";
+//                            class_id = "SCIDN1";
+                    }
+                }
+                else {
+
+                    if(Group.equals("A Group"))
+                    {
+                        class_id="CIDN123";
+//                            class_id = "SCIDN1";
+                    }
+                    else {
+                        class_id="CIDN122";
+//                            class_id = "SCIDN1";
+                    }
+
+                }
+
+            }
+
 
             setData();
 
@@ -332,7 +400,8 @@ public class StuEduDetailActivity extends AppCompatActivity {
         edit.putString("mathsMarks", mathsMarks);
         edit.putString("scienceMarks", scienceMarks);
         edit.putString("totalMarks", totalMarks);
-
+        edit.putString("class_id", class_id);
+        edit.putString("standard", standard);
         edit.apply();
 
         startActivity(new Intent(StuEduDetailActivity.this, AddressDetailStuActivity.class));

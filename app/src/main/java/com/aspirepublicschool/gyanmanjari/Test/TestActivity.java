@@ -80,6 +80,8 @@ public class TestActivity extends AppCompatActivity
     pyCountDown timer,countDownTimerOnResume;
     String time,pos,neg,type;
     Button Btnsubmit,btnabort;
+
+    String totalMarks;
     //old way to show network alert
 //    private BroadcastReceiver mNetworkReceiver;
 
@@ -127,35 +129,41 @@ public class TestActivity extends AppCompatActivity
         checkInternet();
 
         Cursor rs = mydb.getData(tst_id);
-        if (rs.moveToFirst())
-        {
-            // record exists
-            /*Toast.makeText(getApplicationContext(), "Data Exists",
-                    Toast.LENGTH_SHORT).show();*/
-            dataflags=true;
-            getAnswerBefore(tst_id);
-            ArrayList<TestTimer> array_list = mydb.getAllCotacts(tst_id);
-            for(int i=0; i < array_list.size(); i++)
 
-                if(array_list.get(i).getTest_id().equals(tst_id))
-                {
-                    Log.d("###",array_list.get(i).getTime());
-                    timer=(pyCountDown) new pyCountDown(Long.parseLong(array_list.get(i).getTime()), 1000).start();
-                }
-                else {
+        SendRequest();
+        timer=(pyCountDown) new pyCountDown(result, 1000).start();///remove this and uncomment below code
 
-                }
+//        if (rs.moveToFirst())
+//        {
+//            // record exists
+//            /*Toast.makeText(getApplicationContext(), "Data Exists",
+//                    Toast.LENGTH_SHORT).show();*/
+//            dataflags=true;
+//            getAnswerBefore(tst_id);
+//            ArrayList<TestTimer> array_list = mydb.getAllCotacts(tst_id);
+//            for(int i=0; i < array_list.size(); i++)
+//
+//                if(array_list.get(i).getTest_id().equals(tst_id))
+//                {
+//                    Log.d("###",array_list.get(i).getTime());
+//                    timer=(pyCountDown) new pyCountDown(Long.parseLong(array_list.get(i).getTime()), 1000).start();
+//                }
+//                else {
+//
+//                }
+//
+//        }
+//        else {
+//            // record not found
+//            if(mydb.insertContact(tst_id, String.valueOf(result))) {
+//             /*   Toast.makeText(getApplicationContext(), "done",
+//                        Toast.LENGTH_SHORT).show();*/
+//                timer=(pyCountDown) new pyCountDown(result, 1000).start();
+//            }
+//            SendRequest();
+//        }
 
-        }
-        else {
-            // record not found
-            if(mydb.insertContact(tst_id, String.valueOf(result))) {
-             /*   Toast.makeText(getApplicationContext(), "done",
-                        Toast.LENGTH_SHORT).show();*/
-                timer=(pyCountDown) new pyCountDown(result, 1000).start();
-            }
-            SendRequest();
-        }
+
         if (!rs.isClosed())  {
             rs.close();
         }
@@ -183,7 +191,7 @@ public class TestActivity extends AppCompatActivity
                                 SharedPreferences.Editor edit = sp.edit();
 
                                 edit.putString("Test","Test Attempt");
-                                edit.putString("TotalMarks", String.valueOf(DynamicFragment.selectedOpAns.size()));
+                                edit.putString("TotalMarks", totalMarks);
                                 edit.putString("marksMCQ", String.valueOf(marks));
                                 edit.putString("Test_Status", "GIVEN");
 
@@ -193,7 +201,11 @@ public class TestActivity extends AppCompatActivity
                                 edit.apply();
 
                                 timer.cancel();
-                                saveData();
+
+                                startActivity(new Intent(TestActivity.this, AdmissionTestResultActivity.class));
+                                finish();
+
+//                                saveData();
                             }
                         });
 
@@ -377,7 +389,7 @@ public class TestActivity extends AppCompatActivity
                     testQuestionArrayList.clear();
                     JSONArray array=new JSONArray(response);
                     int total=array.getJSONObject(0).getInt("total");
-
+                    totalMarks = String.valueOf(total);
                     if(total==0)
                     {
                         Toast.makeText(TestActivity.this,"No Question",Toast.LENGTH_LONG).show();
@@ -396,6 +408,7 @@ public class TestActivity extends AppCompatActivity
                                 "d": "D"
                         },*/
                             JSONObject object=array.getJSONObject(i);
+                            answers.add(object.getString("correct"));
                             testQuestionArrayList.add(new TestQuestion(
                                     object.getString("qid"),
                                     object.getString("question"),

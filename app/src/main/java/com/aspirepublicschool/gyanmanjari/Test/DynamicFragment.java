@@ -59,7 +59,7 @@ public class DynamicFragment extends Fragment {
     CardView card_view_question1;
     RadioButton a, b, c, d, e;
     ArrayList<TestQuestion> testQuestions;
-    public static ArrayList<Boolean> selectedOpAns = new ArrayList<>(6);
+    public static ArrayList<Boolean> selectedOpAns = new ArrayList<>();
 
     @SuppressLint("ResourceType")
     @Nullable
@@ -81,6 +81,9 @@ public class DynamicFragment extends Fragment {
         firstanswer = view.findViewById(R.id.firstanswer);
         card_view_question1 = view.findViewById(R.id.card_view_question1);
 
+        for (int i=0; i<TestActivity.answers.size(); i++){
+            selectedOpAns.add(false);
+        }
 
         testQuestions = new ArrayList<>();
         mydb = new DBHelper(getContext());
@@ -91,6 +94,7 @@ public class DynamicFragment extends Fragment {
         e = view.findViewById(R.id.e);
 
         if (TestActivity.dataflags == true) {
+
 
             try {
 //                String question = "<html><head> <meta charset=\"utf-8\">\n" +
@@ -1177,6 +1181,7 @@ public class DynamicFragment extends Fragment {
             });
 
         }
+        
         btnmark.setOnClickListener(new View.OnClickListener() {
             @SuppressLint("ResourceAsColor")
             @Override
@@ -1252,7 +1257,7 @@ public class DynamicFragment extends Fragment {
                                 TestActivity.testQuestionArrayList.get(val).getSelected(),
                                 false);
                     }
-                    
+
                 } else {
                     //already unmark old code
 //                    Toast.makeText(getContext(), "This Question is unmarked for Review", Toast.LENGTH_SHORT).show();
@@ -1274,8 +1279,10 @@ public class DynamicFragment extends Fragment {
     private void saveAnswers(final String tst_id, final String q_id, final String answer, final Boolean mark) {
 
         if (TestActivity.answers.get(val).equals(answer)){
+            Toast.makeText(view.getContext(), "True", Toast.LENGTH_SHORT).show();
             selectedOpAns.set(val, true);
         }else {
+            Toast.makeText(view.getContext(), "False", Toast.LENGTH_SHORT).show();
             selectedOpAns.set(val, false);
         }
 

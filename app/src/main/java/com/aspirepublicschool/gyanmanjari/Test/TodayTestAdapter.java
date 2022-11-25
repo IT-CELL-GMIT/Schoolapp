@@ -247,13 +247,16 @@ public class TodayTestAdapter extends RecyclerView.Adapter {
                     JSONArray array=new JSONArray(response);
                     Log.d("@@@",response);
                     String message=array.getJSONObject(0).getString("messgae");
+
+                    SendRequest(tst_id,subject,des,t_type); ///line 286
+
                     if(message.equals("Test already given"))
                     {
                         Common.progressDialogDismiss(ctx);
                         Toast.makeText(ctx,"Sorry!!,Test is already submitted!!",Toast.LENGTH_LONG).show();
 
                         Toast.makeText(ctx, "checkTestGiven in TodayTestAdapter", Toast.LENGTH_SHORT).show();
-                        ctx.startActivity(new Intent(ctx, MainActivity.class));///need this to be removed
+                        ///need this to be removed
 
                     }
                     else {
@@ -283,7 +286,7 @@ public class TodayTestAdapter extends RecyclerView.Adapter {
                                 //checkes whether the current time is between 14:49:00 and 20:11:13.
                                 //System.out.println("true");
                                 Log.d("!!","TRuE");
-                                SendRequest(tst_id,subject,des,t_type);
+//                                SendRequest(tst_id,subject,des,t_type);
                             }
                             else
                             {
