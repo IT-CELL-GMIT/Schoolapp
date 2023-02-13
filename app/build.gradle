@@ -97,4 +97,6 @@ dependencies {
         transitive = true;
     }
 
+    implementation 'com.github.Gkemon:Android-XML-to-PDF-Generator:2.6.8'
+
 }

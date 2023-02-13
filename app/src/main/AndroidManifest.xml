@@ -41,6 +41,13 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
         <activity
+            android:name=".PaymentDisplay.PaymentRecieptActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".AdmissionRegister.SchoolSelelctActivity"
             android:exported="false">
             <meta-data
@@ -56,13 +63,13 @@
         </activity>
         <activity
             android:name=".PaymentImplement.PaymentActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".DocumentUpload.DocumentUploadActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".AdmissionDetailRegister.update"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".AdmissionRegister.StuEduDetailActivity"
             android:exported="false" />
@@ -80,7 +87,7 @@
         </activity>
         <activity
             android:name=".Admission.NewAdmissionLoginActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".Admission.AttemptTestActivity"
             android:exported="true" />

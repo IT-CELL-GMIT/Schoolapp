@@ -64,6 +64,7 @@ import com.aspirepublicschool.gyanmanjari.NewTest.NewTestTab;
 import com.aspirepublicschool.gyanmanjari.NewTest.ViewNewTestToday;
 import com.aspirepublicschool.gyanmanjari.PayTM.DuePaymentActivity;
 import com.aspirepublicschool.gyanmanjari.Payment.PayTMActivity;
+import com.aspirepublicschool.gyanmanjari.PaymentDisplay.PaymentRecieptActivity;
 import com.aspirepublicschool.gyanmanjari.Profile.ProfileMainActivity;
 import com.aspirepublicschool.gyanmanjari.Result.ClassResult;
 import com.aspirepublicschool.gyanmanjari.Test.ViewTestToday;
@@ -148,7 +149,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Log.d("s_id", s_id);
         sc_id = mPrefs.getString("sc_id", "none");
         number = mPrefs.getString("number", "none");
-
+        
+        
         getToken();
 
 
@@ -814,6 +816,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
             case R.id.update1:
                 startActivity(new Intent(MainActivity.this, update.class));
+                return true;
+
+            case R.id.action_payment_reciept:
+                startActivity(new Intent(MainActivity.this, PaymentRecieptActivity.class));
                 return true;
 
             case R.id.action_DocumentUpload:

@@ -15,6 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.aspirepublicschool.gyanmanjari.DocumentUpload.DocumentUploadActivity;
 import com.aspirepublicschool.gyanmanjari.MainActivity;
+import com.aspirepublicschool.gyanmanjari.PaymentDisplay.PaymentRecieptActivity;
 import com.aspirepublicschool.gyanmanjari.R;
 import com.razorpay.Checkout;
 import com.razorpay.ExternalWalletListener;
@@ -30,6 +31,8 @@ public class PaymentActivity extends AppCompatActivity implements PaymentResultW
     private AlertDialog.Builder alertDialogBuilder;
     Button btnPay;
     SharedPreferences sp;
+
+    String amountValue = "100";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,7 +83,7 @@ public class PaymentActivity extends AppCompatActivity implements PaymentResultW
             //You can omit the image option to fetch the image from dashboard
             options.put("image", "https://biochemical-damping.000webhostapp.com/GM%20Logo/gm.jpg");
             options.put("currency", "INR");
-            options.put("amount", "100");
+            options.put("amount", amountValue);
 
             JSONObject preFill = new JSONObject();
             preFill.put("email", "sanjayparmar7167@gmail.com");
@@ -152,9 +155,10 @@ public class PaymentActivity extends AppCompatActivity implements PaymentResultW
                     progressDialog.dismiss();
 
                     edit.putString("PaymentStatus", "PaymentDone");
+                    edit.putString("PaymentAmount", amountValue);
                     edit.apply();
 
-                    startActivity(new Intent(getApplicationContext(), DocumentUploadActivity.class));
+                    startActivity(new Intent(getApplicationContext(), PaymentRecieptActivity.class));
                     finish();
                 }
             }, 2000);

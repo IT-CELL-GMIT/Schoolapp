@@ -14,6 +14,12 @@
         android:title="Upload Document"
         app:showAsAction="never" />
     <item
+        android:id="@+id/action_payment_reciept"
+        android:icon="@drawable/logout"
+        android:orderInCategory="100"
+        android:title="Payment Reciept"
+        app:showAsAction="never" />
+    <item
         android:id="@+id/action_Logout"
         android:icon="@drawable/logout"
         android:orderInCategory="100"
